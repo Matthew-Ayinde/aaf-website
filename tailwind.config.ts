@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        xxl: "1440px",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -52,9 +55,24 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "custom-primary-bg": "#46B8E1",
+        "custom-secondary-bg": "#E9FAFF",
+        "custom-tertiary-bg": " #C5E8F5",
+        "custom-dark-bg": "#001F2D",
+        "custom-gradient-bg": "#005893E0",
+        "custom-primary-text": "#4F4F4F",
+        "custom-secondary-text": "#333333",
+        "custom-tertiary-text": "#BDBDBD",
+        "custom-main-color": "#488AC9",
+        "custom-dark-blue": " #011B33",
+        "custom-black": "#212121",
+        "custom-dark-gray": "#828282",
+        "custom-white": "#F2F2F2",
+        "custom-gray": "#E0E0E0",
+        "custom-input-gray": "#828282"
       },
       borderRadius: {
-        lg: "var(--radius)",
+        lg: "calc(var(--radius) - 8px)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
