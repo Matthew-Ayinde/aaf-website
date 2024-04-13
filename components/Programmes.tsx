@@ -11,7 +11,7 @@ const Programmes = () => {
       <div className="flex flex-col items-center justify-center gap-4 lg:mx-[220px] ">
         <h6 className="text-custom-main-color">Our Programmes</h6>
         <h1 className="font-bold lg:text-5xl text-4xl text-custom-secondary-text lg:mx-16 mx-0 text-center">
-          We've helped over 200 vulnerable communities
+          We&apos;ve helped over 200 vulnerable communities
         </h1>
         <p className="lg:font-normal lg:text-lg font-light text-sm text-center">
           Lorem ipsum dolor sit amet consectetur adipiscing elit seddo eiusmod
