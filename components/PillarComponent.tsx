@@ -1,11 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
+import SubscribeComp from './shared/SubscribeComp'
 
 const PillarComponent = () => {
   return (
     <>
-      <div className='w-full h-400'>
-        <div className='w-full'>
+      <div className='w-full h- mb-6'>
+        <div className='w-full hidden sm:block'>
           <Image 
             src={'/frame001.png'}
             alt=''
@@ -19,9 +20,26 @@ const PillarComponent = () => {
               and service to transform lives and create a more inclusive and equitable society</p>
           </div>
         </div>
+
+        <div className='w-full sm:hidden'>
+          <Image 
+            src={'/pillar2.png'}
+            alt=''
+            width={395}
+            height={400}
+            objectFit='cover'
+          />
+          <div className='absolute top-6 mt-20 text-center text-white'>
+            <div className='font-bold text-2xl mb-2'>AAF Pillars</div>
+            <p className='font-normal text-sm px-9 text-custom-gray'>With a focus on quality delivery, we are driving meaningful change by harnessing the power of <br /> dignity <br /> 
+              and service to transform lives and create a more inclusive and equitable society</p>
+          </div>
+        </div>
+
+
       </div>
 
-      <div className=''>
+      {/* <div className=''>
 
         <div className='mt-10 flex flex-col lg:flex-row px-24 bg-green-400'>
           <div className="w-1/2 bg-blue-400">
@@ -47,9 +65,10 @@ const PillarComponent = () => {
           <div className="w-1/2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod omnis dicta harum facilis dolorem a ea, rem sapiente minima soluta totam, incidunt at laborum, ipsum adipisci natus. Nostrum numquam libero nihil omnis. Aperiam maiores eaque similique est. Eligendi fuga reiciendis maxime, tempora doloribus distinctio, earum nihil aut tempore rem ipsam.</div>
         </div>
 
-      </div>
+      </div> */}
 
-      
+      <SubscribeComp />
+
       
     </>
   )
