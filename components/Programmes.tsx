@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 import { title } from "process";
 
@@ -29,13 +23,23 @@ const Programmes = () => {
           <Card
             key={index}
             className={`max-h-[500px] max-w-[400px] lg:pt-[280px] pt-[216px] lg:pr-12 pl-2 pr-0 lg:pb-5`}
-            style={{ backgroundImage: `url(${card.imageSrc})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
+            style={{
+              backgroundImage: `url(${card.imageSrc})`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
           >
             <div className="flex flex-col space-y-5 lg:pb-0 pb-4">
-              <h1 className="ml-[10px] text-2xl font-bold text-custom-white">{card.title}</h1>
+              <h1 className="ml-[10px] text-2xl font-bold text-custom-white">
+                {card.title}
+              </h1>
               <p className="mx-[10px] text-custom-gray">{card.paragraph}</p>
-              <Button className="bg-custom-main-color px-3 ml-[10px] lg:mr-[53px] mr-3">
-                Donate Now
+              <Button
+                asChild
+                className="bg-custom-main-color hover:bg-custom-main-color px-3 ml-[10px] lg:mr-[53px] mr-3"
+              >
+                <Link href={""}>Donate Now</Link>
               </Button>
             </div>
           </Card>
