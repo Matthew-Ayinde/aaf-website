@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Card } from "./ui/card";
 import SubscribeComp from "./shared/SubscribeComp";
+import Link from "next/link";
 
 // import mobileBg from "../public/contact/touch-mobile.svg";
 
@@ -9,16 +10,7 @@ const ContactPage = () => {
   return (
     <div className="w-full mx-auto">
       <div className="w-full flex flex-col justify-center items-center">
-        <section className="w-full bg-custom-dark-blue h-[200px] lg:h-[720px]">
-          <div className="w-full h-full bg-[url('/contact/aaf-bg.svg')] bg-center bg-no-repeat lg:bg-cover bg-contain">
-            {/* <Image
-              src="/contact/aaf-bg.svg"
-              alt="aaf bg"
-              fill
-              className="w-auto absolute object-contain lg:object-cover"
-            /> */}
-          </div>
-        </section>
+        <section className="w-full bg-custom-dark-blue h-[200px] lg:h-[720px] bg-[url('/contact/aaf-bg.svg')] bg-center bg-no-repeat lg:bg-cover bg-contain"></section>
 
         <section className="w-full flex flex-col justify-center items-center relative">
           <div className="block lg:hidden w-full">
@@ -53,7 +45,10 @@ const ContactPage = () => {
             </div>
             <div className="w-full flex flex-col lg:flex-row gap-10 justify-center items-center">
               {ContactCard.map((card, index) => (
-                <Card key={index} className="w-[328px] lg:w-[400px] h-[360px] lg:h-[400px] flex flex-col gap-8 px-7 py-20">
+                <Card
+                  key={index}
+                  className="w-[328px] lg:w-[400px] h-[360px] lg:h-[400px] flex flex-col gap-8 px-7 py-20"
+                >
                   <div className="w-8 lg:w-16 h-8 lg:h-16 relative">
                     <Image
                       src={card.icon}
@@ -63,9 +58,40 @@ const ContactPage = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-4 text-sm lg:text-base text-custom-dark-gray font-light leading-6">
-                    <h2 className="font-bold text-base lg:text-xl text-custom-secondary-text">{card.header}</h2>
+                    <h2 className="font-bold text-base lg:text-xl text-custom-secondary-text">
+                      {card.header}
+                    </h2>
                     {card.p ? <p>{card.p}</p> : ""}
-                    {card.plist ? <p>{card.plist}</p> : ""}
+
+                    {card.list && (
+                      <ul className="flex flex-col gap-2">
+                        {card.list.map((item, index) => (
+                          <li key={index} className="flex gap-4 ">
+                            <div className="w-6 h-6 relative">
+                              <Link href={item.url}>
+                                <Image
+                                  src={item.imgsrc}
+                                  alt="social"
+                                  fill
+                                  className="w-auto absolute object-contain"
+                                />
+                              </Link>
+                            </div>
+                            <p>{item.p}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {card.emailList && (
+                      <ul className="flex flex-col gap-2">
+                        {card.emailList.map((email, index) => (
+                          <li key={index}>
+                            <p>{email}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </Card>
               ))}
@@ -87,10 +113,22 @@ const ContactCard = [
   {
     icon: "/contact/ion-social-buffer.svg",
     header: "Follow us on Social Media",
-    plist: [
-      "Awaiting Content",
-      // "Awaiting Content",
-      // "Awaiting Content",
+    list: [
+      {
+        imgsrc: "/contact/contact-fb.svg",
+        url: "/",
+        p: "Awating Content",
+      },
+      {
+        imgsrc: "/contact/contact-ig.svg",
+        url: "/",
+        p: "Awating Content",
+      },
+      {
+        imgsrc: "/contact/contact-x.svg",
+        url: "/",
+        p: "Awating Content",
+      },
     ],
   },
   {
@@ -101,6 +139,10 @@ const ContactCard = [
   {
     icon: "/contact/contact-mail.svg",
     header: "Contact Email",
-    plist: ["Loremipsum@gmail.com", "", ""],
+    emailList: [
+      "Loremipsum@gmail.com",
+      "Loremipsum@gmail.com",
+      "Loremipsum@gmail.com",
+    ],
   },
 ];
