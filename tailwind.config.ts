@@ -69,7 +69,8 @@ const config = {
         "custom-dark-gray": "#828282",
         "custom-white": "#F2F2F2",
         "custom-gray": "#E0E0E0",
-        "custom-input-gray": "#828282"
+        "custom-input-gray": "#828282",
+        "custom-pillar-gray": "#828282"
       },
       borderRadius: {
         lg: "calc(var(--radius) - 8px)",
