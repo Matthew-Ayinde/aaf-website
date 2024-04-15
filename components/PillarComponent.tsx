@@ -42,7 +42,9 @@ const PillarComponent = () => {
 
       <PillarImageComponent />
 
-      <SubscribeComp />
+      <div className='lg:mt-64'>
+        <SubscribeComp />
+      </div>
 
       
     </>

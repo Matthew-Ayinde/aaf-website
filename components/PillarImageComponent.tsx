@@ -77,7 +77,7 @@ const PillarImageComponent = () => {
           <div className="w-full flex flex-col lg:flex-row  justify-center items-center gap-8 px-6 lg:px-20 absolute inset-0 pt-14">
             <PillarImageComp
               img1={"/Frame 100.png"}
-              img3={"/pillar/Frame 1.svg"}
+              img3={"/Frame1111.png"}
             />
             <div className="w-full lg:w-[479px] flex flex-col gap-4 ">
               <h1 className="font-bold text-[32px] lg:text-5xl mt-8 mb-4 lg:mt-7 lg:mb-6 text-black">
