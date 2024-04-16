@@ -5,10 +5,30 @@ import Image from "next/image";
 
 const Advancing = () => {
   return (
-    <div className="w-full mx-auto ">
-      <div className="lg:flex lg:flex-col-reverse lg:px-[100px] px-6 lg:py-[140px] py-[100px]">
-        <div className="flex flex-col-reverse lg:flex-row lg:gap-[120px] gap-8">
-          <div className="lg:w-1/2 w-full flex flex-col  justify-center gap-4">
+    <div className="w-full mx-auto relative">
+      <div className="block lg:hidden w-full">
+        <div className="w-full h-[974px] relative">
+          <Image
+            src="/home/advancing-mobile.svg"
+            alt="Mobile Background"
+            fill
+            className="object-cover w-full absolute"
+          />
+        </div>
+      </div>
+      <div className="lg:block hidden w-full">
+        <div className="w-full h-[920px] relative">
+          <Image
+            src="/home/advancing-bg.svg"
+            alt="Mobile Background"
+            fill
+            className="object-cover w-full absolute"
+          />
+        </div>
+      </div>
+      <div className="lg:flex lg:flex-col-reverse justify-center items-center lg:px-[100px] px-6 absolute inset-0 py-[100px] lg:py-0">
+        <div className="flex flex-col-reverse lg:flex-row lg:gap-[120px] gap-8 justify-center items-center">
+          <div className="lg:w-1/2 w-full flex flex-col justify-center gap-4">
             <h6 className="font-medium lg:text-lg text-base text-custom-main-color">
               About us
             </h6>
@@ -24,7 +44,7 @@ const Advancing = () => {
               welfare for the vulnerable. By Improving care, excellence, and
               enterprise in communities
             </p>
-            <Button asChild className="bg-custom-main-color">
+            <Button asChild className="bg-custom-main-color hover:bg-custom-main-color">
               <Link href={""}>About us</Link>
             </Button>
           </div>
