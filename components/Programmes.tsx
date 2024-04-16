@@ -12,7 +12,7 @@ const Programmes = () => {
       <div className="block lg:hidden w-full">
         <div className="w-full h-[3275px] relative">
           <Image
-            src="/home/helped-mobile.svg"
+            src="/home/helped-mobile.png"
             alt="Mobile Background"
             fill
             className="object-cover w-full absolute"
@@ -22,7 +22,7 @@ const Programmes = () => {
       <div className="lg:block hidden w-full">
         <div className="w-full h-[1700px] relative">
           <Image
-            src="/home/helped-bg.svg"
+            src="/home/helped.png"
             alt="Mobile Background"
             fill
             className="object-cover w-full absolute"
@@ -75,37 +75,37 @@ const Programmes = () => {
 
 const cardDetails = [
   {
-    imageSrc: "/housing.svg",
+    imageSrc: "/home/helped2.png",
     title: "Housing & Shelter",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    imageSrc: "/care.svg",
+    imageSrc: "/home/helped3.png",
     title: "Care & Support",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    imageSrc: "/education.svg",
+    imageSrc: "/home/helped4.png",
     title: "Education",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    imageSrc: "/environment.svg",
+    imageSrc: "/home/helped5.png",
     title: "Enviromental Help",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    imageSrc: "/food.svg",
+    imageSrc: "/home/helped6.png",
     title: "Food Relief Funding",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    imageSrc: "/health.svg",
+    imageSrc: "/home/helped7.png",
     title: "Health & Dental Care",
     paragraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

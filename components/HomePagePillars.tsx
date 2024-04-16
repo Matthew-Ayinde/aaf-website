@@ -28,7 +28,7 @@ const HomePagePillars = () => {
             <div className="w-full lg:h-[640px] h-[360px]">
               <div className="relative w-full h-full">
                 <Image
-                  src={"/pillars.svg"}
+                  src={"/home/pillar.png"}
                   fill
                   className="object-contain absolute w-auto"
                   alt=""
@@ -81,7 +81,7 @@ const HomePagePillars = () => {
               </div>
               <div className="lg:w-[520px] lg:h-[164px] relative w-[328px] h-[104px]">
                 <Image
-                  src={"/pillarsImage.svg"}
+                  src={"/home/pillar2.png"}
                   alt=""
                   fill
                   className="absolute object-cover rounded-xl"

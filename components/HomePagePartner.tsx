@@ -9,7 +9,7 @@ const HomePagePartner = () => {
       <div className="block lg:hidden w-full">
         <div className="w-full h-[1022px] relative">
           <Image
-            src="/home/partner-mobile.svg"
+            src="/home/partner-mobile.png"
             alt="Mobile Background"
             fill
             className="object-cover w-full absolute"
@@ -19,7 +19,7 @@ const HomePagePartner = () => {
       <div className="lg:block hidden w-full">
         <div className="w-full h-[920px] relative">
           <Image
-            src="/home/partner-bg.svg"
+            src="/home/partner1.png"
             alt="Mobile Background"
             fill
             className="object-cover w-full absolute"
@@ -32,7 +32,7 @@ const HomePagePartner = () => {
           <div className="w-full lg:w-1/2">
             <div className="relative w-full lg:h-[640px] h-[360px]">
               <Image
-                src={"/partner.svg"}
+                src={"/home/partner2.png"}
                 fill
                 className="object-contain absolute"
                 alt=""

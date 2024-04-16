@@ -3,9 +3,9 @@ import ImageComp from "./shared/ImageComp";
 import Image from "next/image";
 
 const Awaiting = () => {
-  const img1 = "/awaitingImg1.svg";
-  const img2 = "/awaitingImg2.svg";
-  const img3 = "/awaitingImg3.svg";
+  const img1 = "/home/awaiting1.png";
+  const img2 = "/home/awaiting2.png";
+  const img3 = "/home/awaiting3.png";
 
   return (
     <div className="w-full mx-auto bg-custom-dark-bg lg:px-20 px-6 lg:py-[120px] py-[100px]">

@@ -9,7 +9,7 @@ const Advancing = () => {
       <div className="block lg:hidden w-full">
         <div className="w-full h-[974px] relative">
           <Image
-            src="/home/advancing-mobile.svg"
+            src="/home/advancing-mobile.png"
             alt="Mobile Background"
             fill
             className="object-cover w-full absolute"
@@ -19,7 +19,7 @@ const Advancing = () => {
       <div className="lg:block hidden w-full">
         <div className="w-full h-[920px] relative">
           <Image
-            src="/home/advancing-bg.svg"
+            src="/home/advancing1.png"
             alt="Mobile Background"
             fill
             className="object-cover w-full absolute"
@@ -62,7 +62,7 @@ const Advancing = () => {
           <div className="w-full lg:w-1/2">
             <div className="relative w-full lg:h-[640px] h-[360px]">
               <Image
-                src={"/advancingImage.svg"}
+                src={"/home/advancing2.png"}
                 fill
                 className="object-contain absolute"
                 alt=""

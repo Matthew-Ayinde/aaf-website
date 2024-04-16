@@ -7,7 +7,7 @@ const HomePageProgramme = () => {
       <div className="block lg:hidden w-full">
         <div className="w-full h-[974px] relative">
           <Image
-            src="/home/learn-mobile.svg"
+            src="/home/learn-mobile.png"
             alt="Mobile Background"
             fill
             className="object-cover w-full absolute"
@@ -17,7 +17,7 @@ const HomePageProgramme = () => {
       <div className="lg:block hidden w-full">
         <div className="w-full h-[928px] relative">
           <Image
-            src="/home/learn-bg.svg"
+            src="/home/learn1.png"
             alt="Mobile Background"
             fill
             className="object-cover w-full absolute"
@@ -74,7 +74,7 @@ const HomePageProgramme = () => {
           <div className="w-full lg:w-1/2">
             <div className="relative w-full lg:h-[640px] h-[360px]">
               <Image
-                src={"/homepageprogramme.svg"}
+                src={"/home/learn2.png"}
                 fill
                 className="object-contain absolute w-auto rounded-xl"
                 alt=""

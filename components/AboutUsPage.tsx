@@ -11,7 +11,7 @@ const AboutUsPage = () => {
     <div className="w-full mx-auto max-w-screen-xxl">
       <div className="w-full flex flex-col justify-center items-center">
         <section className="w-full h-screen bg-custom-gradient-bg">
-          <div className="w-full h-full bg-[url('/about/about-bg.svg')] bg-center bg-no-repeat bg-cover flex flex-col justify-center items-center px-6">
+          <div className="w-full h-full bg-[url('/about/westand.png')] bg-center bg-no-repeat bg-cover flex flex-col justify-center items-center px-6">
             <div className="w-full lg:w-[1056px] flex flex-col items-center gap-14">
               <h1 className="font-bold text-custom-white flex flex-col justify-center items-center text-[32px] lg:text-[56px] text-center">
                 We stand as a testament to the transformative potential of
@@ -42,15 +42,16 @@ const AboutUsPage = () => {
           <div className="lg:block hidden w-full">
             <div className="w-full h-[800px] relative">
               <Image
-                src="/about/who-bg.svg"
+                src="/about/whoweare.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
               />
             </div>
           </div>
-          <div className="absolute inset-0 flex justify-center items-center px-6 lg:px-20 ">
-            <div className="w-full lg:w-[880px] flex gap-6 lg:gap-16 flex-col justify-center items-center">
+
+          <div className="absolute inset-0 flex justify-center px-6 lg:px-20 py-20 ">
+            <div className="w-full lg:w-[880px] flex gap-6 lg:gap-16 flex-col">
               <h1 className="text-[32px] lg:text-[56px] font-bold text-center">
                 Who we are
               </h1>
@@ -77,25 +78,29 @@ const AboutUsPage = () => {
         </section>
 
         <section className="w-full px-6 lg:px-20 h-[909px] bg-custom-primary-bg flex justify-center items-center">
-          <div className="w-full flex flex-col lg:flex-row  justify-center items-center gap-[120px]">
-            <ImageComp
-              img1={"/about/arrow-up.svg"}
-              img2={"/plant.svg"}
-              img3={"/st.svg"}
-            />
-            <div className="w-full lg:w-[479px] flex flex-col gap-4 ">
-              <h1 className="font-bold text-[32px] lg:text-5xl text-custom-secondary-text">
-                Our Motto
-              </h1>
-              <p className="text-lg leading-[26px] lg:leading-[29px] font-medium text-custom-secondary-text">
-                Dignity and Service
-              </p>
-              <p className="text-base lg:text-lg text-custom-primary-text leading-[26px] lg:leading-[29px]">
-                We uphold dignity by treating every individual with respect,
-                regardless of background, or status by striving for excellence
-                in all endeavors, and ensuring that every act of service holds
-                the highest standards of quality and integrity.
-              </p>
+          <div className="w-full flex flex-col lg:flex-row gap-8 justify-center items-center">
+            <div className="w-full lg:w-3/5">
+              <ImageComp
+                img1={"/about/motto1.png"}
+                img2={"/about/motto2.png"}
+                img3={"/about/motto3.png"}
+              />
+            </div>
+            <div className="w-full lg:w-2/5 flex justify-end">
+              <div className="w-full lg:w-[479px] flex flex-col gap-4">
+                <h1 className="font-bold text-[32px] lg:text-5xl text-custom-secondary-text">
+                  Our Motto
+                </h1>
+                <p className="text-lg leading-[26px] lg:leading-[29px] font-medium text-custom-secondary-text">
+                  Dignity and Service
+                </p>
+                <p className="text-base lg:text-lg text-custom-primary-text leading-[26px] lg:leading-[29px]">
+                  We uphold dignity by treating every individual with respect,
+                  regardless of background, or status by striving for excellence
+                  in all endeavors, and ensuring that every act of service holds
+                  the highest standards of quality and integrity.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -114,7 +119,7 @@ const AboutUsPage = () => {
           <div className="lg:block hidden w-full">
             <div className="w-full h-[909px] relative">
               <Image
-                src="/about/vision-bg.svg"
+                src="/about/visionbg.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -122,28 +127,32 @@ const AboutUsPage = () => {
             </div>
           </div>
 
-          <div className="w-full flex flex-col-reverse lg:flex-row  justify-center items-center gap-8 px-6 lg:px-20 absolute inset-0">
-            <div className="w-full lg:w-[479px] flex flex-col gap-4 ">
-              <h1 className="font-bold text-[32px] lg:text-5xl text-custom-secondary-text">
-                Our Vision
-              </h1>
-              <p className="text-lg leading-[26px] lg:leading-[29px] font-medium text-custom-secondary-text">
-                A continent whose people can take advantage of its abundant
-                potential and possibilities
-              </p>
-              <p className="text-base lg:text-lg text-custom-primary-text leading-[26px] lg:leading-[29px]">
-                To create an environment where every individual across the
-                continent has the opportunity to realize their full potential by
-                tapping into Africa&apos;s vast resources, and cultural richness
-                to drive innovation, entrepreneurship, and sustainable
-                development.
-              </p>
+          <div className="w-full flex flex-col-reverse lg:flex-row justify-center items-center gap-8 px-6 lg:px-20 absolute inset-0">
+            <div className="w-full lg:w-2/5 flex">
+              <div className="w-full lg:w-[479px] flex flex-col gap-4">
+                <h1 className="font-bold text-[32px] lg:text-5xl text-custom-secondary-text">
+                  Our Vision
+                </h1>
+                <p className="text-lg leading-[26px] lg:leading-[29px] font-medium text-custom-secondary-text">
+                  A continent whose people can take advantage of its abundant
+                  potential and possibilities
+                </p>
+                <p className="text-base lg:text-lg text-custom-primary-text leading-[26px] lg:leading-[29px]">
+                  To create an environment where every individual across the
+                  continent has the opportunity to realize their full potential
+                  by tapping into Africa&apos;s vast resources, and cultural
+                  richness to drive innovation, entrepreneurship, and
+                  sustainable development.
+                </p>
+              </div>
             </div>
-            <ReverseImageComp
-              img1={"/about/hr-img.svg"}
-              img2={"/about/children.svg"}
-              img3={"/about/dream.svg"}
-            />
+            <div className="w-full lg:w-3/5 flex justify-end">
+              <ReverseImageComp
+                img1={"/about/vision1.png"}
+                img2={"/about/vision2.png"}
+                img3={"/about/vision3.png"}
+              />
+            </div>
           </div>
         </section>
 
@@ -161,7 +170,7 @@ const AboutUsPage = () => {
           <div className="lg:block hidden w-full">
             <div className="w-full h-[909px] relative">
               <Image
-                src="/about/mission-bg.svg"
+                src="/about/missionbg.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -169,20 +178,24 @@ const AboutUsPage = () => {
             </div>
           </div>
 
-          <div className="w-full flex flex-col lg:flex-row  justify-center items-center gap-8 px-6 lg:px-20 absolute inset-0">
-            <ImageComp
-              img1={"/about/hr-img.svg"}
-              img2={"/about/children.svg"}
-              img3={"/about/dream.svg"}
-            />
-            <div className="w-full lg:w-[479px] flex flex-col gap-4 ">
-              <h1 className="font-bold text-[32px] lg:text-5xl text-custom-secondary-text">
-                Our Mission
-              </h1>
-              <p className="text-base lg:text-lg text-custom-primary-text leading-[26px] lg:leading-[29px]">
-                Improve the quality of life and enterprise through investments
-                in human capital
-              </p>
+          <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-8 px-6 lg:px-20 absolute inset-0">
+            <div className="w-full lg:w-3/5">
+              <ImageComp
+                img1={"/about/mission.png"}
+                img2={"/about/mission2.png"}
+                img3={"/about/mission3.png"}
+              />
+            </div>
+            <div className="w-full lg:w-2/5">
+              <div className="w-full lg:w-[479px] flex flex-col gap-4">
+                <h1 className="font-bold text-[32px] lg:text-5xl text-custom-secondary-text">
+                  Our Mission
+                </h1>
+                <p className="text-base lg:text-lg text-custom-primary-text leading-[26px] lg:leading-[29px]">
+                  Improve the quality of life and enterprise through investments
+                  in human capital
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -201,7 +214,7 @@ const AboutUsPage = () => {
           <div className="lg:block hidden w-full">
             <div className="w-full h-[1505px] relative">
               <Image
-                src="/about/core-bg.svg"
+                src="/about/corebg.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -209,11 +222,11 @@ const AboutUsPage = () => {
             </div>
           </div>
 
-          <div className="w-full flex flex-col justify-center items-center gap-20 px-6 lg:px-10 absolute inset-0">
+          <div className="w-full flex flex-col justify-center items-center gap-20 px-6 lg:px-[100px] absolute inset-0">
             <h1 className="font-bold text-[32px] lg:text-[64px] text-white">
               Our Core Values
             </h1>
-            <div className="w-full flex flex-wrap justify-center items-center gap-20">
+            <div className="w-full flex flex-wrap justify-between gap-20">
               {Cores.map((core, index) => (
                 <div
                   key={index}
@@ -253,7 +266,7 @@ const AboutUsPage = () => {
           <div className="lg:block hidden w-full">
             <div className="w-full h-[1634px] relative">
               <Image
-                src="/about/meet-bg.svg"
+                src="/about/meetbg.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -294,7 +307,7 @@ const AboutUsPage = () => {
           </div>
         </section>
 
-        <section className="pb-16 px-6">
+        <section className="pb-16">
           <SubscribeComp />
         </section>
       </div>
@@ -306,7 +319,7 @@ export default AboutUsPage;
 
 const AAFPeople = [
   {
-    people: "/about/Adeyinka.svg",
+    people: "/about/Adeyinka.png",
     name: "Adeyinka Adesope",
     title: "Chairman/Founder",
   },
@@ -316,17 +329,17 @@ const AAFPeople = [
     title: "Co-founder",
   },
   {
-    people: "/about/sam.svg",
+    people: "/about/sam.png",
     name: "Samuel Akinnuga",
     title: "Executive Director",
   },
   {
-    people: "/about/ranti.svg",
+    people: "/about/ranti.png",
     name: "Oluwaranti Olaniyan",
     title: "Technical Advisor",
   },
   {
-    people: "/about/pm.svg",
+    people: "/about/pm.png",
     name: "First Name",
     title: "Program Manager",
   },
