@@ -77,7 +77,7 @@ const AboutUsPage = () => {
         </section>
 
         <section className="w-full px-6 lg:px-20 h-[909px] bg-custom-primary-bg flex justify-center items-center">
-          <div className="w-full flex flex-col lg:flex-row  justify-center items-center gap-8">
+          <div className="w-full flex flex-col lg:flex-row  justify-center items-center gap-[120px]">
             <ImageComp
               img1={"/about/arrow-up.svg"}
               img2={"/plant.svg"}

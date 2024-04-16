@@ -45,7 +45,7 @@ const Programmes = () => {
           {cardDetails.map((card, index) => (
             <Card
               key={index}
-              className={`max-h-[500px] max-w-[400px] lg:pt-[280px] pt-[216px] lg:pr-12 pl-2 pr-0 lg:pb-5`}
+              className={`h-[410px] lg:h-[500px] max-w-[400px] p-4 flex items-end`}
               style={{
                 backgroundImage: `url(${card.imageSrc})`,
                 backgroundPosition: "center",
@@ -53,14 +53,14 @@ const Programmes = () => {
                 backgroundSize: "cover",
               }}
             >
-              <div className="flex flex-col space-y-5 lg:pb-0 pb-4">
-                <h1 className="ml-[10px] text-2xl font-bold text-custom-white">
+              <div className="flex flex-col gap-4 lg:gap-5 w-full lg:max-w-[343px]">
+                <h1 className="text-lg lg:text-2xl font-bold text-custom-white">
                   {card.title}
                 </h1>
-                <p className="mx-[10px] text-custom-gray">{card.paragraph}</p>
+                <p className="text-custom-gray text-xs">{card.paragraph}</p>
                 <Button
                   asChild
-                  className="bg-custom-main-color hover:bg-custom-main-color px-3 ml-[10px] lg:mr-[53px] mr-3"
+                  className="bg-custom-main-color hover:bg-custom-main-color px-3 w-full lg:w-[280px] h-[45.92px] lg:h-[52px]"
                 >
                   <Link href={""}>Donate Now</Link>
                 </Button>

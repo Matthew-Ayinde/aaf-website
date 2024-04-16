@@ -66,8 +66,8 @@ const SwiperComp = () => {
               />
               <div className="absolute inset-0 w-full">
                 <div className="w-full h-full flex flex-col justify-center items-center lg:px-28 px-4 gap-10">
-                  <div className="w-fit" data-swiper-parallax="1440">
-                    <h1 className="text-white text-2xl lg:text-[64px] font-bold">
+                  <div className="w-fit flex justify-center items-center" data-swiper-parallax="1440">
+                    <h1 className="text-white text-center text-[44px] lg:text-[64px] font-bold">
                       {data.header}
                     </h1>
                   </div>
