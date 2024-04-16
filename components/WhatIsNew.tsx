@@ -29,12 +29,12 @@ const WhatIsNew = () => {
   }, []);
   return (
     <div className="w-full mx-auto">
-      <div className="w-full h-screen bg-[url('/children.svg')] bg-center bg-no-repeat bg-cover flex flex-col items-center justify-center lg:px-0 px-5 gap-6">
-        <h1 className="text-white font-bold text-6xl">What’s New </h1>
+      <div className="w-full h-screen bg-[url('/home/whatsnew.png')] bg-center bg-no-repeat bg-cover flex flex-col items-center justify-center lg:px-0 px-5 gap-6">
+        <h1 className="text-white font-bold text-[40px] lg:text-6xl">What’s New </h1>
 
         <Button
           asChild
-          className="py-4 px-16 bg-white hover:bg-white text-custom-main-color"
+          className="py-4 px-16 bg-white hover:bg-white text-custom-main-color w-[207px] lg:w-[236px] h-[52px] lg:h-[52px]"
         >
           <Link href={""}>Partner with us</Link>
         </Button>
@@ -57,19 +57,19 @@ const WhatIsNew = () => {
 
 const newImages: ImageData[] = [
   {
-    imgsrc: "/newImage1.svg",
+    imgsrc: "/home/whatsnew2.png",
     alt: "",
   },
   {
-    imgsrc: "/newImage2.svg",
+    imgsrc: "/home/whatsnew3.png",
     alt: "",
   },
   {
-    imgsrc: "/newImage3.svg",
+    imgsrc: "/home/whatsnew4.png",
     alt: "",
   },
   {
-    imgsrc: "/newImage4.svg",
+    imgsrc: "/home/whatsnew5.png",
     alt: "",
   },
 ];

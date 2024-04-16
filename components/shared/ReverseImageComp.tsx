@@ -24,7 +24,7 @@ const ReverseImageComp: React.FC<ImageCompProps> = ({ img1, img2, img3 }) => {
             src={img2}
             alt=""
             fill
-            className="absolute w-auto object-cover rounded-2xl"
+            className="absolute w-auto object-cover rounded-2xl border-white border-8"
           />
         </div>
         <div className="rounded-2xl w-[180px] border-white border-8 lg:w-[360px] h-[120px] lg:h-[240px] absolute left-0 bottom-0">

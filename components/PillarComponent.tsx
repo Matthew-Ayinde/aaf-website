@@ -6,7 +6,7 @@ import PillarImageComponent from "./PillarImageComponent";
 const PillarComponent = () => {
   return (
     <>
-      <div className="w-full">
+      <div className="w-full mx-auto max-w-screen-xxl">
         <div className="w-full hidden sm:block">
           <Image
             src={"/frame001.png"}

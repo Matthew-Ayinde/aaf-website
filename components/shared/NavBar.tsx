@@ -17,7 +17,7 @@ const NavBar = () => {
   };
   return (
     <nav className="">
-      <div className="flex items-center justify-between max-w-screen-xxl lg:px-20 px-6 py-5 w-full mx-auto bg-white lg:relative">
+      <div className="flex items-center justify-between max-w-screen-xxl lg:px-20 px-6 py-5 h-[88px] w-full mx-auto bg-white lg:relative">
         {/* logo */}
         <div className="lg:w-fit w-full z-50 flex items-center justify-between">
           <Link
@@ -64,7 +64,7 @@ const NavBar = () => {
 
         {/* large screen links */}
         <div className="lg:flex hidden justify-between items-center">
-          <ul className="flex gap-[40px]">
+          <ul className="flex gap-[40px] text-base text-custom-input-gray">
             {navLinks.map((link, index) => (
               <Link key={index} href={link.url}>
                 <li>{link.name}</li>
@@ -72,9 +72,9 @@ const NavBar = () => {
             ))}
           </ul>
         </div>
-        <div className="lg:inline-flex hidden gap-3">
+        <div className="lg:inline-flex hidden gap-4 w-[200px] justify-end lg:border-l-2 border-l-[#4383FF] h-[46px] items-center">
           {NavSocial.map((social, index) => (
-            <div key={index} className="w-6 h-6 relative">
+            <div key={index} className="w-[18px] h-[18px] relative">
               <Link href={social.url}>
                 <Image
                   src={social.img}
@@ -89,8 +89,8 @@ const NavBar = () => {
 
         {/* mobile view */}
         <ul
-          className={`lg:hidden uppercase absolute w-full h-full bottom-0 bg-white z-10 py-32 duration-500 ease-in-out transition-all ${
-            open ? "left-0" : "left-[-100%]"
+          className={`lg:hidden absolute w-full h-full bottom-0 bg-white z-10 py-32 duration-500 ease-in-out transition-all ${
+            open ? "left-0" : "left-[-100%] custom-input-gray"
           }`}
         >
           <div className="flex flex-col space-y-12 px-6">
@@ -99,9 +99,9 @@ const NavBar = () => {
                 {link.name}
               </Link>
             ))}
-            <div className="flex lg:hidden gap-3">
+            <div className="flex lg:hidden gap-6 pt-10">
               {NavSocial.map((social, index) => (
-                <div key={index} className="w-6 h-6 relative">
+                <div key={index} className="w-[18px] h-[18px] relative">
                   <Link href={social.url}>
                     <Image
                       src={social.img}

@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="w-full mx-auto relative">
+    <div className="w-full mx-auto relative max-w-screen-xxl">
       <SwiperComp />
       <Advancing />
       <HomePagePillars />
@@ -25,7 +25,7 @@ export default function Home() {
         <div className="block lg:hidden w-full">
           <div className="w-full h-[1033px] relative">
             <Image
-              src="/home/sub-mobile.svg"
+              src="/home/subscribe-mobile.png"
               alt="Mobile Background"
               fill
               className="object-cover w-full absolute"
@@ -35,7 +35,7 @@ export default function Home() {
         <div className="lg:block hidden w-full">
           <div className="w-full h-[837px] relative">
             <Image
-              src="/home/sub-bg.svg"
+              src="/home/subscribeImage.png"
               alt="Mobile Background"
               fill
               className="object-cover w-full absolute"
