@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import { useState } from "react";
+import SwiperCore from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -13,8 +14,21 @@ import Link from "next/link";
 import { slideData } from "@/data/slideData";
 
 const SwiperComp = () => {
+  const [swiper, setSwiper] = useState<SwiperCore | null>(null);
+
   const navbarHeight = 80;
   const fullScreenHeight = `calc(100vh - ${navbarHeight}px)`;
+
+  SwiperCore.use([Autoplay, EffectFade]);
+
+  const goToSlide = (index: number) => {
+    console.log("Clicked on bullet index:", index);
+    if (swiper) {
+      // swiper.slideTo(index);
+      swiper.update();
+      swiper.slideTo(index, 600)
+    }
+  };
 
   return (
     <div className="w-full relative">
@@ -30,11 +44,6 @@ const SwiperComp = () => {
           type: "bullets",
           bulletClass: "swiper-pagination-bullet",
           bulletActiveClass: "swiper-pagination-bullet-active",
-          // renderBullet: function(index, className) {
-          //   return `<div className="flex">
-          //     <span className=" h-2 w-2 rounded-full bg-green-900 flex"></span>
-          //   </div>`
-          // }
         }}
         autoplay={{
           delay: 3000,
@@ -71,7 +80,20 @@ const SwiperComp = () => {
                   >
                     <Link href="/">Learn More</Link>
                   </Button>
-                  <div className="swiper-pagination"></div>
+                  <div className="flex gap-1">
+                    {slideData.map((_, idx) => (
+                      <div
+                        key={idx}
+                        className={`swiper-pagination-bullet ${
+                          idx === index
+                            ? "bg-custom-main-color w-6 cursor-pointer"
+                            : "bg-custom-tertiary-text h-2 w-2 cursor-pointer"
+                        } rounded-full `}
+                        onClick={() => goToSlide(idx)}
+                        // onClick={() => console.log(idx)}
+                      ></div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
