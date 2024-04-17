@@ -9,14 +9,14 @@ const NavBar = () => {
 
   const toggleMobileMenu = () => {
     setOpen(!open);
-    if (!open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    // if (!open) {
+    //   document.body.style.overflow = "hidden";
+    // } else {
+    //   document.body.style.overflow = "auto";
+    // }
   };
   return (
-    <nav className="">
+    <nav className="w-full mx-auto max-w-screen-xxl">
       <div className="flex items-center justify-between max-w-screen-xxl lg:px-20 px-6 py-5 h-[88px] w-full mx-auto bg-white lg:relative">
         {/* logo */}
         <div className="lg:w-fit w-full z-50 flex items-center justify-between">
@@ -95,7 +95,7 @@ const NavBar = () => {
         >
           <div className="flex flex-col space-y-12 px-6">
             {navLinks.map((link, index) => (
-              <Link key={index} href={link.url}>
+              <Link key={index} href={link.url} onClick={() => setOpen(false)}>
                 {link.name}
               </Link>
             ))}
@@ -132,8 +132,8 @@ const navLinks = [
     url: "/pillars",
   },
   {
-    name: "Get Involved",
-    url: "/get-involved",
+    name: "Get involved",
+    url: "/partner",
   },
   {
     name: "Contact us",

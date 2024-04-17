@@ -1,11 +1,22 @@
 "use client";
 
-import React from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { useEffect, useState } from "react";
 
 const HomePagePillars = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView, mainControls]);
+
   const [imageDimensions, setImageDimensions] = useState({
     width: 520,
     height: 164,
@@ -21,10 +32,16 @@ const HomePagePillars = () => {
   }, []);
 
   return (
-    <div className="w-full mx-auto bg-custom-primary-bg lg:py-[144px] py-[100px] lg:px-[100px] px-6">
+    <motion.div
+      ref={ref}
+      variants={containerVariants}
+      initial="hidden"
+      animate={mainControls}
+      className="w-full mx-auto bg-custom-primary-bg lg:py-[144px] py-[100px] lg:px-[100px] px-6"
+    >
       <div className="w-full lg:flex lg:flex-col-reverse ">
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
-          <div className="w-full lg:w-1/2">
+        <motion.div className="flex flex-col lg:flex-row justify-center items-center gap-10">
+          <motion.div variants={leftVariants} className="w-full lg:w-1/2">
             <div className="w-full lg:h-[640px] h-[360px]">
               <div className="relative w-full h-full">
                 <Image
@@ -35,8 +52,11 @@ const HomePagePillars = () => {
                 />
               </div>
             </div>
-          </div>
-          <div className="lg:w-1/2 lg:h-[569px] w-full flex justify-end">
+          </motion.div>
+          <motion.div
+            variants={rightVariants}
+            className="lg:w-1/2 lg:h-[569px] w-full flex justify-end"
+          >
             <div className="w-full lg:w-[520px] flex flex-col gap-12">
               <div className="w-full flex flex-col gap-6">
                 <h6 className="font-medium text-lg text-white">Our Pillars</h6>
@@ -79,20 +99,63 @@ const HomePagePillars = () => {
                   </li>
                 </ul>
               </div>
-              <div className="lg:w-[520px] lg:h-[164px] relative w-[328px] h-[104px]">
+              <div className="lg:w-[520px] lg:h-[164px] relative w-full h-[104px]">
                 <Image
-                  src={"/home/pillar2.png"}
+                  src={"/home/AAF-Pillar-Stat.png"}
                   alt=""
                   fill
-                  className="absolute object-cover rounded-xl"
+                  className="absolute object-contain rounded-xl"
                 />
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 export default HomePagePillars;
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    y: 0,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
+const leftVariants = {
+  hidden: {
+    opacity: 0,
+    x: -100,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+const rightVariants = {
+  hidden: {
+    opacity: 0,
+    x: 100,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};

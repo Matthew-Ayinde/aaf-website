@@ -29,8 +29,8 @@ const WhatIsNew = () => {
   }, []);
   return (
     <div className="w-full mx-auto">
-      <div className="w-full h-screen bg-[url('/home/whatsnew.png')] bg-center bg-no-repeat bg-cover flex flex-col items-center justify-center lg:px-0 px-5 gap-6">
-        <h1 className="text-white font-bold text-[40px] lg:text-6xl">What’s New </h1>
+      <div className="w-full h-screen bg-[url('/home/whatsnew.png')] bg-center bg-no-repeat bg-cover flex flex-col items-center justify-center lg:px-0 px-5 gap-10">
+        <h1 className="text-white font-bold text-[40px] lg:text-6xl">AAF in the News </h1>
 
         <Button
           asChild
@@ -39,7 +39,7 @@ const WhatIsNew = () => {
           <Link href={""}>Partner with us</Link>
         </Button>
       </div>
-      <div className="mt-6 grid lg:grid-cols-4 grid-cols-3 gap-4 ">
+      <div className="mt-6 grid lg:grid-cols-4 grid-cols-3 gap-4">
         {visibleImages.map((images, index) => (
           <div key={index}>
             <Image
@@ -47,6 +47,7 @@ const WhatIsNew = () => {
               width={imageDimensions.width}
               height={imageDimensions.height}
               alt=""
+              className="rounded-2xl"
             />
           </div>
         ))}

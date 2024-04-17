@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 
 const Footer = () => {
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto max-w-screen-xxl">
       <div className="w-full bg-custom-dark-bg px-6 lg:px-20 py-[120px] flex flex-col justify-center gap-6">
         <Link href={"/"}>
           <Image
@@ -43,7 +43,7 @@ const Footer = () => {
             <div className="text-custom-gray text-base flex flex-col gap-10">
               <Link href={"/about-us"}>About Us</Link>
               <Link href={"/pillars"}>AAF Pillars</Link>
-              <Link href={"/get-involved"}>Get Involved</Link>
+              <Link href={"/partner"}>Get-involved</Link>
             </div>
           </div>
           <div className="flex flex-col gap-6">

@@ -8,15 +8,15 @@ import Link from "next/link";
 
 const ContactPage = () => {
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto max-w-screen-xxl">
       <div className="w-full flex flex-col justify-center items-center">
         <section className="w-full bg-custom-dark-blue h-[200px] lg:h-[720px] bg-[url('/contact/aaf-bg.svg')] bg-center bg-no-repeat lg:bg-cover bg-contain"></section>
 
         <section className="w-full flex flex-col justify-center items-center relative">
           <div className="block lg:hidden w-full">
-            <div className="w-full h-[1951px] relative">
+            <div className="w-full h-[1751px] relative">
               <Image
-                src="/contact/touch-mobile.svg"
+                src="/contact/Get-in-touch-mobile.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -26,7 +26,7 @@ const ContactPage = () => {
           <div className="lg:block hidden w-full">
             <div className="w-full h-[1291px] relative">
               <Image
-                src="/contact/touch-bg.svg"
+                src="/contact/Get-in-touch-bg.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -34,7 +34,7 @@ const ContactPage = () => {
             </div>
           </div>
 
-          <div className="flex flex-col justify-center items-center gap-[45px] lg:gap-[120px] px-6 lg:px-16 absolute inset-0">
+          <div className="flex flex-col lg:justify-center items-center gap-[45px] lg:gap-[120px] px-6 lg:px-16 absolute inset-0 py-32 lg:py-0">
             <div className="w-full flex flex-col justify-center items-center gap-4 ">
               <h1 className="text-custom-black font-bold text-[32px] lg:text-[64px]">
                 Get in Touch with us
