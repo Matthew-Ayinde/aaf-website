@@ -114,43 +114,43 @@ export default HomePageProgramme;
 
 const containerVariants = {
   hidden: {
-    opacity: 0,
+    // opacity: 0,
     y: 0,
   },
 
   visible: {
-    opacity: 1,
+    // opacity: 1,
     y: 0,
     transition: {
       type: "spring",
       when: "beforeChildren",
-      staggerChildren: 0.1,
+      staggerChildren: 0.3,
     },
   },
 };
 const leftVariants = {
   hidden: {
     opacity: 0,
-    x: -100,
+    x: -200,
   },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.5,
+      duration: 1,
     },
   },
 };
 const rightVariants = {
   hidden: {
     opacity: 0,
-    x: 100,
+    x: 200,
   },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.5,
+      duration: 1,
     },
   },
 };

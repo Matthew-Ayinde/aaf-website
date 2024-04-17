@@ -142,12 +142,12 @@ export default Programmes;
 
 const containerVariants = {
   hidden: {
-    opacity: 0,
+    // opacity: 0,
     y: 0,
   },
 
   visible: {
-    opacity: 1,
+    // opacity: 1,
     y: 0,
     transition: {
       type: "spring",
@@ -158,7 +158,7 @@ const containerVariants = {
 };
 
 const topVariants = {
-  hidden: { opacity: 0, y: -200 },
+  hidden: { opacity: 0, y: -100 },
   visible: {
     opacity: 1,
     y: 0,
@@ -173,7 +173,7 @@ const topVariants = {
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 200 },
+  hidden: { opacity: 0, y: 100 },
   visible: {
     opacity: 1,
     y: 0,

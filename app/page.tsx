@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="w-full mx-auto relative max-w-screen-xxl">
+    <div className="w-full mx-auto relative max-w-screen-xxl overflow-x-hidden">
       <SwiperComp />
       <Advancing />
       <HomePagePillars />

@@ -346,11 +346,11 @@ const AAFPeople = [
     name: "Adeyinka Adesope",
     title: "Chairman/Founder",
   },
-  {
-    people: "",
-    name: "Adenike Adesope",
-    title: "Co-founder",
-  },
+  // {
+  //   people: "",
+  //   name: "Adenike Adesope",
+  //   title: "Co-founder",
+  // },
   {
     people: "/about/sam.png",
     name: "Samuel Akinnuga",
