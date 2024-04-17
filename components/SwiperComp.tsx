@@ -78,7 +78,7 @@ const SwiperComp = () => {
                     asChild
                     className="w-[209px] h-[56px] bg-custom-main-color hover:bg-custom-main-color shadow-none"
                   >
-                    <Link href="/">Learn More</Link>
+                    <Link href="/partner">Learn More</Link>
                   </Button>
                   <div className="flex gap-1">
                     {slideData.map((_, idx) => (

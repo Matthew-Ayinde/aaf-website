@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+
 import Image from "next/image";
 
 import ImageComp from "./shared/ImageComp";
@@ -38,6 +39,17 @@ interface ImageData {
 }
 
 const GetInvolved = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView, mainControls]);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -77,7 +89,7 @@ const GetInvolved = () => {
 
   return (
     <div className="w-full mx-auto max-w-screen-xxl">
-      <div className="flex flex-col justify-center items-center w-full">
+      <div className="flex flex-col justify-center items-center w-full overflow-x-hidden">
         <section className="relative h-screen w-full">
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -115,9 +127,18 @@ const GetInvolved = () => {
             </div>
           </div>
 
-          <div className="w-full flex flex-col-reverse justify-center items-center lg:px-[100px] px-6 lg:flex-row lg:gap-10 gap-8 absolute inset-0">
+          <motion.div
+            variants={containerVariants}
+            ref={ref}
+            initial="hidden"
+            animate={mainControls}
+            className="w-full flex flex-col-reverse justify-center items-center lg:px-[100px] px-6 lg:flex-row lg:gap-10 gap-8 absolute inset-0"
+          >
             <div className="w-full lg:w-2/5">
-              <div className="w-full lg:w-[500px] flex flex-col gap-10 justify-center ">
+              <motion.div
+                variants={leftVariants}
+                className="w-full lg:w-[500px] flex flex-col gap-10 justify-center "
+              >
                 <h1 className="font-bold lg:text-[40px] text-2xl text-custom-dark-blue leading-[30px] lg:leading-[55px]">
                   Awaiting Content for Volunteer Page
                 </h1>
@@ -135,13 +156,24 @@ const GetInvolved = () => {
                   Suspendisse sem felis, molestie in pulvinar a, interdum sed
                   arcu.
                 </p>
-              </div>
+              </motion.div>
             </div>
 
             <div className="w-full lg:w-3/5 flex justify-end">
-              <ImageComp img1={img1} img2={img2} img3={img3} />
+              {/* <ImageComp img1={img1} img2={img2} img3={img3} /> */}
+              <motion.div
+                variants={rightVariants}
+                className="w-full h-[360px] lg:h-[640px] relative"
+              >
+                <Image
+                  src={"/volunteer/GetInvolved-Volunteer.png"}
+                  alt=""
+                  fill
+                  className="w-auto object-contain absolute"
+                />
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         <section className="w-full flex justify-center items-center relative">
@@ -350,3 +382,47 @@ const newImages: ImageData[] = [
 ];
 
 export default GetInvolved;
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    y: 0,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
+const leftVariants = {
+  hidden: {
+    opacity: 0,
+    x: -100,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+const rightVariants = {
+  hidden: {
+    opacity: 0,
+    x: 100,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+

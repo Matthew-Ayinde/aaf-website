@@ -1,11 +1,26 @@
-import React from "react";
+"use client";
+
+import { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 
 const Advancing = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true,});
+
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView, mainControls]);
+
   return (
-    <div className="w-full mx-auto relative">
+    <div ref={ref} className="w-full mx-auto relative">
       <div className="block lg:hidden w-full">
         <div className="w-full h-[974px] relative">
           <Image
@@ -28,8 +43,13 @@ const Advancing = () => {
       </div>
 
       <div className="lg:flex lg:flex-col-reverse justify-center items-center lg:px-[100px] px-6 absolute inset-0 py-[100px] lg:py-0">
-        <div className="w-full flex flex-col-reverse lg:flex-row justify-center items-center gap-10">
-          <div className="lg:w-1/2 w-full ">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={mainControls}
+          className="w-full flex flex-col-reverse lg:flex-row justify-center items-center gap-10"
+        >
+          <motion.div variants={leftVariants} className="lg:w-1/2 w-full">
             <div className="w-full lg:w-[520px] flex flex-col justify-center gap-12">
               <div className="w-full flex flex-col justify-center gap-8">
                 <h6 className="font-medium lg:text-lg text-base text-custom-main-color">
@@ -57,9 +77,9 @@ const Advancing = () => {
                 <Link href={"/about-us"}>About us</Link>
               </Button>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="w-full lg:w-1/2">
+          <motion.div variants={rightVariants} className="w-full lg:w-1/2">
             <div className="relative w-full lg:h-[640px] h-[360px]">
               <Image
                 src={"/home/advancing2.png"}
@@ -68,11 +88,54 @@ const Advancing = () => {
                 alt=""
               />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );
 };
 
 export default Advancing;
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    y: 0,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
+const leftVariants = {
+  hidden: {
+    opacity: 0,
+    x: -100,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+const rightVariants = {
+  hidden: {
+    opacity: 0,
+    x: 100,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};

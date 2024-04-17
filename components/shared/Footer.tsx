@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 
 const Footer = () => {
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto max-w-screen-xxl">
       <div className="w-full bg-custom-dark-bg px-6 lg:px-20 py-[120px] flex flex-col justify-center gap-6">
         <Link href={"/"}>
           <Image

@@ -79,11 +79,19 @@ const AboutUsPage = () => {
         <section className="w-full px-6 lg:px-20 h-[909px] bg-custom-primary-bg flex justify-center items-center">
           <div className="w-full flex flex-col lg:flex-row gap-8 justify-center items-center">
             <div className="w-full lg:w-3/5">
-              <ImageComp
+              {/* <ImageComp
                 img1={"/about/motto1.png"}
                 img2={"/about/motto2.png"}
                 img3={"/about/motto3.png"}
-              />
+              /> */}
+              <div className="w-full h-[360px] lg:h-[640px] relative">
+                <Image
+                  src={"/about/Motto.png"}
+                  alt=""
+                  fill
+                  className="w-auto object-contain absolute"
+                />
+              </div>
             </div>
             <div className="w-full lg:w-2/5 flex justify-end">
               <div className="w-full lg:w-[479px] flex flex-col gap-4">
@@ -146,11 +154,19 @@ const AboutUsPage = () => {
               </div>
             </div>
             <div className="w-full lg:w-3/5 flex justify-end">
-              <ReverseImageComp
+              {/* <ReverseImageComp
                 img1={"/about/vision1.png"}
                 img2={"/about/vision2.png"}
                 img3={"/about/vision3.png"}
-              />
+              /> */}
+              <div className="w-full h-[360px] lg:h-[640px] relative">
+                <Image
+                  src={"/about/Vision.png"}
+                  alt=""
+                  fill
+                  className="w-auto object-contain absolute"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -179,11 +195,19 @@ const AboutUsPage = () => {
 
           <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-8 px-6 lg:px-20 absolute inset-0">
             <div className="w-full lg:w-3/5">
-              <ImageComp
+              {/* <ImageComp
                 img1={"/about/mission.png"}
                 img2={"/about/mission2.png"}
                 img3={"/about/mission3.png"}
-              />
+              /> */}
+              <div className="w-full h-[360px] lg:h-[640px] relative">
+                <Image
+                  src={"/about/Mission.png"}
+                  alt=""
+                  fill
+                  className="w-auto object-contain absolute"
+                />
+              </div>
             </div>
             <div className="w-full lg:w-2/5">
               <div className="w-full lg:w-[479px] flex flex-col gap-4">

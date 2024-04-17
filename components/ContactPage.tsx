@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const ContactPage = () => {
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto max-w-screen-xxl">
       <div className="w-full flex flex-col justify-center items-center">
         <section className="w-full bg-custom-dark-blue h-[200px] lg:h-[720px] bg-[url('/contact/aaf-bg.svg')] bg-center bg-no-repeat lg:bg-cover bg-contain"></section>
 
