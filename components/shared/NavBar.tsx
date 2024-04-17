@@ -9,11 +9,11 @@ const NavBar = () => {
 
   const toggleMobileMenu = () => {
     setOpen(!open);
-    if (!open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    // if (!open) {
+    //   document.body.style.overflow = "hidden";
+    // } else {
+    //   document.body.style.overflow = "auto";
+    // }
   };
   return (
     <nav className="w-full mx-auto max-w-screen-xxl">
@@ -95,7 +95,7 @@ const NavBar = () => {
         >
           <div className="flex flex-col space-y-12 px-6">
             {navLinks.map((link, index) => (
-              <Link key={index} href={link.url}>
+              <Link key={index} href={link.url} onClick={() => setOpen(false)}>
                 {link.name}
               </Link>
             ))}
@@ -132,7 +132,7 @@ const navLinks = [
     url: "/pillars",
   },
   {
-    name: "Partner with us",
+    name: "Get involved",
     url: "/partner",
   },
   {

@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const Advancing = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true,});
+  const isInView = useInView(ref, { once: true });
 
   const mainControls = useAnimation();
 
@@ -20,7 +20,13 @@ const Advancing = () => {
   }, [isInView, mainControls]);
 
   return (
-    <div ref={ref} className="w-full mx-auto relative">
+    <motion.div
+      ref={ref}
+      variants={containerVariants}
+      initial="hidden"
+      animate={mainControls}
+      className="w-full mx-auto relative"
+    >
       <div className="block lg:hidden w-full">
         <div className="w-full h-[974px] relative">
           <Image
@@ -43,12 +49,7 @@ const Advancing = () => {
       </div>
 
       <div className="lg:flex lg:flex-col-reverse justify-center items-center lg:px-[100px] px-6 absolute inset-0 py-[100px] lg:py-0">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={mainControls}
-          className="w-full flex flex-col-reverse lg:flex-row justify-center items-center gap-10"
-        >
+        <motion.div className="w-full flex flex-col-reverse lg:flex-row justify-center items-center gap-10">
           <motion.div variants={leftVariants} className="lg:w-1/2 w-full">
             <div className="w-full lg:w-[520px] flex flex-col justify-center gap-12">
               <div className="w-full flex flex-col justify-center gap-8">
@@ -91,7 +92,7 @@ const Advancing = () => {
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -109,7 +110,7 @@ const containerVariants = {
     transition: {
       type: "spring",
       when: "beforeChildren",
-      staggerChildren: 0.1,
+      staggerChildren: 0.3,
     },
   },
 };

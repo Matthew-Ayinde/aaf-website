@@ -40,7 +40,7 @@ interface ImageData {
 
 const GetInvolved = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const isInView = useInView(ref, { once: true });
 
   const mainControls = useAnimation();
 
@@ -100,7 +100,7 @@ const GetInvolved = () => {
           <div className="absolute inset-0 flex justify-center items-center">
             {/* Centered content */}
             <h1 className="text-white text-[40px] lg:text-[64px] font-bold">
-              Volunteer with us
+              Partner with us
             </h1>
           </div>
         </section>
@@ -140,7 +140,7 @@ const GetInvolved = () => {
                 className="w-full lg:w-[500px] flex flex-col gap-10 justify-center "
               >
                 <h1 className="font-bold lg:text-[40px] text-2xl text-custom-dark-blue leading-[30px] lg:leading-[55px]">
-                  Awaiting Content for Volunteer Page
+                  Awaiting Content for Partner with us Page
                 </h1>
                 <p className="font-normal lg:text-base text-sm text-custom-input-gray">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -200,7 +200,7 @@ const GetInvolved = () => {
 
           <div className="w-full flex flex-col justify-center items-center absolute inset-0 gap-10 lg:gap-20 px-6">
             <h1 className="font-bold text-2xl lg:text-[56px] text-white">
-              Become a Volunteer
+              Get in touch
             </h1>
             {/* form */}
             <Form {...form}>

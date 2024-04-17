@@ -22,11 +22,11 @@ const Awaiting = () => {
   }, [isInView, mainControls]);
 
   return (
-    <div ref={ref} className="w-full mx-auto bg-custom-dark-bg lg:px-20 px-6 lg:py-[120px] py-[100px]">
+    <motion.div ref={ref} variants={containerVariants}
+    initial="hidden"
+    animate={mainControls} className="w-full mx-auto bg-custom-dark-bg lg:px-20 px-6 lg:py-[120px] py-[100px]">
       <div className="lg:flex lg:flex-col-reverse">
-        <motion.div variants={containerVariants}
-          initial="hidden"
-          animate={mainControls} className="flex flex-col lg:flex-row gap-10 items-center justify-center">
+        <motion.div className="flex flex-col lg:flex-row gap-10 items-center justify-center">
           <motion.div variants={leftVariants} className="w-full lg:w-3/5">
             {/* <ImageComp img1={img1} img2={img2} img3={img3} /> */}
             <div className="w-full h-[360px] lg:h-[640px] relative">
@@ -45,7 +45,7 @@ const Awaiting = () => {
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -8,7 +8,7 @@ export const slideData = [
     },
     {
       id: 2,
-      imgSrc: "/home/carousel/students.png",
+      imgSrc: "/home/carousel/health.png",
       header: "Health",
       content:
         "Help us build a future that value all human lives. Join us on our 400+ welfare projects on education, healthcare, and livelihood.",
@@ -22,7 +22,7 @@ export const slideData = [
     },
     {
       id: 4,
-      imgSrc: "/home/carousel/students.png",
+      imgSrc: "/home/carousel/social.png",
       header: "Social Enterprise",
       content:
         "Help us build a future that value all human lives. Join us on our 400+ welfare projects on education, healthcare, and livelihood.",

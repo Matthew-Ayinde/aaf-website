@@ -55,13 +55,12 @@ const Programmes = () => {
           variants={topVariants}
           className="flex flex-col items-center justify-center gap-4 w-full lg:w-[808px]"
         >
-          <h6 className="text-custom-main-color">Our Programmes</h6>
+          {/* <h6 className="text-custom-main-color">Our Programmes</h6> */}
           <h1 className="font-bold lg:text-5xl text-4xl text-custom-secondary-text lg:mx-16 mx-0 text-center">
-            We&apos;ve helped over 200 vulnerable communities
+            Our Programs
           </h1>
           <p className="lg:font-normal lg:text-lg font-light text-sm text-center">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit seddo eiusmod
-            tempor incididunt ut labore et.
+            The signature initiatives of the AAF aligns with its foundation pillars of Health, Education and Social Enterprise.
           </p>
         </motion.div>
         <div
@@ -87,7 +86,7 @@ const Programmes = () => {
                 <p className="text-custom-gray text-xs">{card.paragraph}</p>
                 <Button
                   asChild
-                  className="bg-custom-main-color hover:bg-custom-main-color px-3 w-full lg:w-[280px] h-[45.92px] lg:h-[52px]"
+                  className="bg-custom-main-color hover:bg-custom-main-color px-3 w-full h-[45.92px] lg:h-[52px]"
                 >
                   <Link href={""}>Donate Now</Link>
                 </Button>

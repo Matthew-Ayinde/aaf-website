@@ -17,8 +17,11 @@ const HomePageProgramme = () => {
   }, [isInView, mainControls]);
 
   return (
-    <div
+    <motion.div
       ref={ref}
+      variants={containerVariants}
+          initial="hidden"
+          animate={mainControls}
       className="w-full mx-auto flex justify-center items-center relative"
     >
       <div className="block lg:hidden w-full">
@@ -44,9 +47,7 @@ const HomePageProgramme = () => {
 
       <div className="lg:flex lg:flex-col-reverse justify-center items-center lg:px-[100px] px-6 absolute inset-0 py-[100px] lg:py-0">
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={mainControls}
+          
           className="w-full flex flex-col-reverse justify-center items-center lg:flex-row gap-10"
         >
           <motion.div variants={leftVariants} className="lg:w-1/2 w-full">
@@ -105,7 +106,7 @@ const HomePageProgramme = () => {
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

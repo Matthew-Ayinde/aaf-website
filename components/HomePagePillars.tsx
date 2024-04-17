@@ -32,17 +32,15 @@ const HomePagePillars = () => {
   }, []);
 
   return (
-    <div
+    <motion.div
       ref={ref}
+      variants={containerVariants}
+      initial="hidden"
+      animate={mainControls}
       className="w-full mx-auto bg-custom-primary-bg lg:py-[144px] py-[100px] lg:px-[100px] px-6"
     >
       <div className="w-full lg:flex lg:flex-col-reverse ">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={mainControls}
-          className="flex flex-col lg:flex-row justify-center items-center gap-10"
-        >
+        <motion.div className="flex flex-col lg:flex-row justify-center items-center gap-10">
           <motion.div variants={leftVariants} className="w-full lg:w-1/2">
             <div className="w-full lg:h-[640px] h-[360px]">
               <div className="relative w-full h-full">
@@ -55,7 +53,10 @@ const HomePagePillars = () => {
               </div>
             </div>
           </motion.div>
-          <motion.div variants={rightVariants} className="lg:w-1/2 lg:h-[569px] w-full flex justify-end">
+          <motion.div
+            variants={rightVariants}
+            className="lg:w-1/2 lg:h-[569px] w-full flex justify-end"
+          >
             <div className="w-full lg:w-[520px] flex flex-col gap-12">
               <div className="w-full flex flex-col gap-6">
                 <h6 className="font-medium text-lg text-white">Our Pillars</h6>
@@ -110,7 +111,7 @@ const HomePagePillars = () => {
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
