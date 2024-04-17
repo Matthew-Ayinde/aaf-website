@@ -202,7 +202,7 @@ const AboutUsPage = () => {
               /> */}
               <div className="w-full h-[360px] lg:h-[640px] relative">
                 <Image
-                  src={"/about/Mission.png"}
+                  src={"/about/mission.png"}
                   alt=""
                   fill
                   className="w-auto object-contain absolute"
@@ -390,3 +390,46 @@ const Cores = [
     p: "Pursuing excellence in all aspects of the foundation's operations, programs, and initiatives by demonstrating a relentless commitment to achieving sustainable impact that is aligned with the foundation's mission and vision.",
   },
 ];
+
+const containerVariants = {
+  hidden: {
+    // opacity: 0,
+    y: 0,
+  },
+
+  visible: {
+    // opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      when: "beforeChildren",
+      staggerChildren: 0.3,
+    },
+  },
+};
+const leftVariants = {
+  hidden: {
+    opacity: 0,
+    x: -200,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+const rightVariants = {
+  hidden: {
+    opacity: 0,
+    x: 200,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
