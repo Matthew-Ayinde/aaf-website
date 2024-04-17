@@ -76,16 +76,18 @@ const GetInvolved = () => {
   }, []);
 
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto max-w-screen-xxl">
       <div className="flex flex-col justify-center items-center w-full">
         <section className="relative h-screen w-full">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: 'url("/getInvolvedBanner.svg")' }}
+            style={{
+              backgroundImage: 'url("/volunteer/getInvolvedBanner.png")',
+            }}
           />
           <div className="absolute inset-0 flex justify-center items-center">
             {/* Centered content */}
-            <h1 className="text-white text-2xl lg:text-[64px] font-bold">
+            <h1 className="text-white text-[40px] lg:text-[64px] font-bold">
               Volunteer with us
             </h1>
           </div>
@@ -95,7 +97,7 @@ const GetInvolved = () => {
           <div className="block lg:hidden w-full">
             <div className="w-full h-[927px] relative">
               <Image
-                src="/volunteer/content-mobile.svg"
+                src="/volunteer/awaiting-content-mobile.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -105,7 +107,7 @@ const GetInvolved = () => {
           <div className="lg:block hidden w-full">
             <div className="w-full h-[1000px] relative">
               <Image
-                src="/volunteer/content-bg.svg"
+                src="/volunteer/awaiting-content-bg.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -113,28 +115,32 @@ const GetInvolved = () => {
             </div>
           </div>
 
-          <div className="w-full flex flex-col-reverse justify-center items-center lg:px-20 px-6 lg:flex-row lg:gap-10 gap-8 absolute inset-0">
-            <div className="w-full lg:w-[500px] flex flex-col gap-10 justify-center ">
-              <h1 className="font-bold lg:text-[40px] text-2xl text-custom-dark-blue leading-[30px] lg:leading-[55px]">
-                Awaiting Content for Volunteer Page
-              </h1>
-              <p className="font-normal lg:text-base text-sm text-custom-input-gray">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse sem felis, molestie in pulvinar a, interdum sed
-                arcu.
-                <br />
-                <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse sem felis, molestie in pulvinar a, interdum.
-                <br />
-                <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse sem felis, molestie in pulvinar a, interdum sed
-                arcu.
-              </p>
+          <div className="w-full flex flex-col-reverse justify-center items-center lg:px-[100px] px-6 lg:flex-row lg:gap-10 gap-8 absolute inset-0">
+            <div className="w-full lg:w-2/5">
+              <div className="w-full lg:w-[500px] flex flex-col gap-10 justify-center ">
+                <h1 className="font-bold lg:text-[40px] text-2xl text-custom-dark-blue leading-[30px] lg:leading-[55px]">
+                  Awaiting Content for Volunteer Page
+                </h1>
+                <p className="font-normal lg:text-base text-sm text-custom-input-gray">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse sem felis, molestie in pulvinar a, interdum sed
+                  arcu.
+                  <br />
+                  <br />
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse sem felis, molestie in pulvinar a, interdum.
+                  <br />
+                  <br />
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse sem felis, molestie in pulvinar a, interdum sed
+                  arcu.
+                </p>
+              </div>
             </div>
 
-            <ImageComp img1={img1} img2={img2} img3={img3} />
+            <div className="w-full lg:w-3/5 flex justify-end">
+              <ImageComp img1={img1} img2={img2} img3={img3} />
+            </div>
           </div>
         </section>
 
@@ -142,7 +148,7 @@ const GetInvolved = () => {
           <div className="block lg:hidden w-full">
             <div className="w-full h-[889px] relative">
               <Image
-                src="/volunteer/become-mobile.svg"
+                src="/volunteer/become-volunteer-mobile.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -152,7 +158,7 @@ const GetInvolved = () => {
           <div className="lg:block hidden w-full">
             <div className="w-full h-[993px] relative">
               <Image
-                src="/volunteer/become-bg.svg"
+                src="/volunteer/become-volunteer-bg.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -168,7 +174,7 @@ const GetInvolved = () => {
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-4 lg:space-y-6 w-full lg:w-[1000px] flex flex-col justify-center items-center"
+                className="space-y-4 lg:space-y-6 w-full lg:w-[1000px] flex flex-col justify-center items-center text-custom-gray"
               >
                 <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10">
                   <FormField
@@ -326,19 +332,19 @@ const GetInvolved = () => {
 
 const newImages: ImageData[] = [
   {
-    imgsrc: "/newImage1.svg",
+    imgsrc: "/volunteer/footer-1.png",
     alt: "",
   },
   {
-    imgsrc: "/newImage2.svg",
+    imgsrc: "/volunteer/footer-2.png",
     alt: "",
   },
   {
-    imgsrc: "/newImage3.svg",
+    imgsrc: "/volunteer/footer-3.png",
     alt: "",
   },
   {
-    imgsrc: "/newImage4.svg",
+    imgsrc: "/volunteer/footer-4.png",
     alt: "",
   },
 ];

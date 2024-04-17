@@ -132,8 +132,8 @@ const navLinks = [
     url: "/pillars",
   },
   {
-    name: "Get Involved",
-    url: "/get-involved",
+    name: "Partner with us",
+    url: "/partner",
   },
   {
     name: "Contact us",

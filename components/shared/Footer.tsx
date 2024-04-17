@@ -43,7 +43,7 @@ const Footer = () => {
             <div className="text-custom-gray text-base flex flex-col gap-10">
               <Link href={"/about-us"}>About Us</Link>
               <Link href={"/pillars"}>AAF Pillars</Link>
-              <Link href={"/get-involved"}>Get Involved</Link>
+              <Link href={"/partner"}>Partner with us</Link>
             </div>
           </div>
           <div className="flex flex-col gap-6">

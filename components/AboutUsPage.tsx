@@ -25,14 +25,13 @@ const AboutUsPage = () => {
               </Button>
             </div>
           </div>
-          {/* <div></div> */}
         </section>
 
         <section className="w-full flex justify-center items-center relative">
           <div className="block lg:hidden w-full">
             <div className="w-full h-[880px] relative">
               <Image
-                src="/about/who-mobile.svg"
+                src="/about/who-mobile.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -50,12 +49,12 @@ const AboutUsPage = () => {
             </div>
           </div>
 
-          <div className="absolute inset-0 flex justify-center px-6 lg:px-20 py-20 ">
-            <div className="w-full lg:w-[880px] flex gap-6 lg:gap-16 flex-col">
+          <div className="absolute inset-0 flex lg:justify-center px-6 lg:px-20 py-20 ">
+            <div className="w-[280px] lg:w-[880px] flex gap-6 lg:gap-16 flex-col">
               <h1 className="text-[32px] lg:text-[56px] font-bold text-center">
                 Who we are
               </h1>
-              <p className="text-center text-lg text-custom-primary-text">
+              <p className="text-center text-sm lg:text-lg text-custom-primary-text">
                 The Adeyinka Adesope Foundation (AAF) serves as a symbol of hope
                 and empowerment for disadvantaged communities, driven by a
                 steadfast commitment to enhancing lives and advocating for
@@ -109,7 +108,7 @@ const AboutUsPage = () => {
           <div className="block lg:hidden w-full">
             <div className="w-full h-[890px] relative">
               <Image
-                src="/about/vision-mobile.svg"
+                src="/about/vision-mobile.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -160,7 +159,7 @@ const AboutUsPage = () => {
           <div className="block lg:hidden w-full">
             <div className="w-full h-[890px] relative">
               <Image
-                src="/about/mission-mobile.svg"
+                src="/about/mission-mobile.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -204,7 +203,7 @@ const AboutUsPage = () => {
           <div className="block lg:hidden w-full">
             <div className="w-full h-[2541px] relative">
               <Image
-                src="/about/core-mobile.svg"
+                src="/about/core-mobile.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -226,7 +225,7 @@ const AboutUsPage = () => {
             <h1 className="font-bold text-[32px] lg:text-[64px] text-white">
               Our Core Values
             </h1>
-            <div className="w-full flex flex-wrap justify-between gap-20">
+            <div className="w-full flex flex-wrap justify-center gap-20 lg:gap-40">
               {Cores.map((core, index) => (
                 <div
                   key={index}
@@ -256,7 +255,7 @@ const AboutUsPage = () => {
           <div className="block lg:hidden w-full">
             <div className="w-full h-[2799px] relative">
               <Image
-                src="/about/meet-mobile.svg"
+                src="/about/meet-mobile.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
