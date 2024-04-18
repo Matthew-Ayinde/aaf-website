@@ -1,12 +1,35 @@
-import React from "react";
+"use client";
+
+import { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Image from "next/image";
 
 const SubscribeComp = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView, mainControls]);
+
   return (
-    <div className="w-full flex justify-center">
-      <div className="w-full lg:w-[1150px] h-[580px] lg:h-[417px] bg-[url('/Subscribe-bg.png')] bg-[#004E7A] rounded-2xl bg-no-repeat mt-10 bg-center bg-cover text-white flex flex-col justify-center items-center gap-14 px-4 mx-6">
+    <motion.div
+      ref={ref}
+      variants={containerVariants}
+      initial="hidden"
+      animate={mainControls}
+      className="w-full flex justify-center"
+    >
+      <motion.div  className="w-full lg:w-[1150px] h-[580px] lg:h-[417px] bg-[url('/Subscribe-bg.png')] bg-[#004E7A] rounded-2xl bg-no-repeat mt-10 bg-center bg-cover text-white flex justify-center items-center ">
+        <motion.div variants={bottomVariants} className="w-full flex flex-col justify-center items-center gap-14 px-4 mx-6">
+
         <div className="flex flex-col gap-4 justify-center items-center text-center">
           <h1 className="font-bold text-[32px] lg:text-[40px]">
             Subscribe to our Newsletter
@@ -28,9 +51,40 @@ const SubscribeComp = () => {
             Subscribe
           </Button>
         </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 
 export default SubscribeComp;
+
+const containerVariants = {
+  hidden: {
+    // opacity: 0,
+    y: 0,
+  },
+
+  visible: {
+    // opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      when: "beforeChildren",
+      staggerChildren: 0.3,
+    },
+  },
+};
+const bottomVariants = {
+  hidden: {
+    opacity: 0,
+    y: 200,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};

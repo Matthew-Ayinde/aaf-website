@@ -5,6 +5,8 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 import Image from "next/image";
 
+import Content from "./partner/Content";
+
 import ImageComp from "./shared/ImageComp";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -88,7 +90,10 @@ const GetInvolved = () => {
   }, []);
 
   return (
-    <div className="w-full mx-auto max-w-screen-xxl">
+    <motion.div variants={containerVariants}
+    ref={ref}
+    initial="hidden"
+    animate={mainControls} className="w-full mx-auto max-w-screen-xxl">
       <div className="flex flex-col justify-center items-center w-full overflow-x-hidden">
         <section className="relative h-screen w-full">
           <div
@@ -97,84 +102,15 @@ const GetInvolved = () => {
               backgroundImage: 'url("/volunteer/getInvolvedBanner.png")',
             }}
           />
-          <div className="absolute inset-0 flex justify-center items-center">
+          <motion.div variants={bottomVariants} className="absolute inset-0 flex justify-center items-center">
             {/* Centered content */}
             <h1 className="text-white text-[40px] lg:text-[64px] font-bold">
               Partner with us
             </h1>
-          </div>
-        </section>
-
-        <section className="w-full flex justify-center items-center relative">
-          <div className="block lg:hidden w-full">
-            <div className="w-full h-[927px] relative">
-              <Image
-                src="/volunteer/awaiting-content-mobile.png"
-                alt="Mobile Background"
-                fill
-                className="object-cover w-full absolute"
-              />
-            </div>
-          </div>
-          <div className="lg:block hidden w-full">
-            <div className="w-full h-[1000px] relative">
-              <Image
-                src="/volunteer/awaiting-content-bg.png"
-                alt="Mobile Background"
-                fill
-                className="object-cover w-full absolute"
-              />
-            </div>
-          </div>
-
-          <motion.div
-            variants={containerVariants}
-            ref={ref}
-            initial="hidden"
-            animate={mainControls}
-            className="w-full flex flex-col-reverse justify-center items-center lg:px-[100px] px-6 lg:flex-row lg:gap-10 gap-8 absolute inset-0"
-          >
-            <div className="w-full lg:w-2/5">
-              <motion.div
-                variants={leftVariants}
-                className="w-full lg:w-[500px] flex flex-col gap-10 justify-center "
-              >
-                <h1 className="font-bold lg:text-[40px] text-2xl text-custom-dark-blue leading-[30px] lg:leading-[55px]">
-                  Awaiting Content for Partner with us Page
-                </h1>
-                <p className="font-normal lg:text-base text-sm text-custom-input-gray">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse sem felis, molestie in pulvinar a, interdum sed
-                  arcu.
-                  <br />
-                  <br />
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse sem felis, molestie in pulvinar a, interdum.
-                  <br />
-                  <br />
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse sem felis, molestie in pulvinar a, interdum sed
-                  arcu.
-                </p>
-              </motion.div>
-            </div>
-
-            <div className="w-full lg:w-3/5 flex justify-end">
-              {/* <ImageComp img1={img1} img2={img2} img3={img3} /> */}
-              <motion.div
-                variants={rightVariants}
-                className="w-full h-[360px] lg:h-[640px] relative"
-              >
-                <Image
-                  src={"/volunteer/GetInvolved-Volunteer.png"}
-                  alt=""
-                  fill
-                  className="w-auto object-contain absolute"
-                />
-              </motion.div>
-            </div>
           </motion.div>
         </section>
+
+        <Content />
 
         <section className="w-full flex justify-center items-center relative">
           <div className="block lg:hidden w-full">
@@ -358,7 +294,7 @@ const GetInvolved = () => {
           </div>
         </section>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -385,44 +321,57 @@ export default GetInvolved;
 
 const containerVariants = {
   hidden: {
-    opacity: 0,
+    // opacity: 0,
     y: 0,
   },
 
   visible: {
-    opacity: 1,
+    // opacity: 1,
     y: 0,
     transition: {
       type: "spring",
       when: "beforeChildren",
-      staggerChildren: 0.1,
+      staggerChildren: 0.3,
     },
   },
 };
 const leftVariants = {
   hidden: {
     opacity: 0,
-    x: -100,
+    x: -200,
   },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.5,
+      duration: 1,
     },
   },
 };
 const rightVariants = {
   hidden: {
     opacity: 0,
-    x: 100,
+    x: 200,
   },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.5,
+      duration: 1,
     },
   },
 };
 
+const bottomVariants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};

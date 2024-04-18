@@ -1,18 +1,40 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+
 import Image from "next/image";
-import React from "react";
 import ImageComp from "./shared/ImageComp";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import SubscribeComp from "./shared/SubscribeComp";
 import ReverseImageComp from "./shared/ReverseImageComp";
+import MottoComp from "./about/MottoComp";
+import VisionComp from "./about/VisionComp";
+import MissionComp from "./about/MottoComp";
+import WhoWeAre from "./about/WhoWeAre";
+import Core from "./about/Core";
 
 const AboutUsPage = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+    }
+  }, [isInView, mainControls]);
+
   return (
-    <div className="w-full mx-auto max-w-screen-xxl">
+    <motion.div ref={ref} variants={containerVariants}
+    initial="hidden"
+    animate={mainControls} className="w-full mx-auto max-w-screen-xxl overflow-hidden">
       <div className="w-full flex flex-col justify-center items-center">
         <section className="w-full h-screen bg-custom-gradient-bg">
           <div className="w-full h-full bg-[url('/about/westand.png')] bg-center bg-no-repeat bg-cover flex flex-col justify-center items-center px-6">
-            <div className="w-full lg:w-[1056px] flex flex-col items-center gap-14">
+            <motion.div variants={bottomVariants} className="w-full lg:w-[1056px] flex flex-col items-center gap-14">
               <h1 className="font-bold text-custom-white flex flex-col justify-center items-center text-[32px] lg:text-[56px] text-center">
                 We stand as a testament to the transformative potential of
                 empathy, cooperation, and steadfast determination.
@@ -23,257 +45,19 @@ const AboutUsPage = () => {
               >
                 <Link href="/">Learn More</Link>
               </Button>
-            </div>
+            </motion.div>
           </div>
         </section>
 
-        <section className="w-full flex justify-center items-center relative">
-          <div className="block lg:hidden w-full">
-            <div className="w-full h-[880px] relative">
-              <Image
-                src="/about/who-mobile.png"
-                alt="Mobile Background"
-                fill
-                className="object-cover w-full absolute"
-              />
-            </div>
-          </div>
-          <div className="lg:block hidden w-full">
-            <div className="w-full h-[800px] relative">
-              <Image
-                src="/about/whoweare.png"
-                alt="Mobile Background"
-                fill
-                className="object-cover w-full absolute"
-              />
-            </div>
-          </div>
+        <WhoWeAre />
 
-          <div className="absolute inset-0 flex lg:justify-center px-6 lg:px-20 py-20 ">
-            <div className="w-[280px] lg:w-[880px] flex gap-6 lg:gap-16 flex-col">
-              <h1 className="text-[32px] lg:text-[56px] font-bold text-center">
-                Who we are
-              </h1>
-              <p className="text-center text-sm lg:text-lg text-custom-primary-text">
-                The Adeyinka Adesope Foundation (AAF) serves as a symbol of hope
-                and empowerment for disadvantaged communities, driven by a
-                steadfast commitment to enhancing lives and advocating for
-                welfare. Inspired by the visionary spirit of Adeyinka Adesope,
-                the foundation&apos;s creed reflects a profound dedication to
-                assisting the marginalized and underprivileged, striving
-                relentlessly to elevate them towards a higher standard of
-                living. <br />
-                <br /> At the heart of AAF&apos;s principles lies the motto
-                &quot;Advancing Lives,&quot; embodying its unwavering pursuit of
-                enhanced welfare for the vulnerable, while also promoting
-                excellence and entrepreneurship within communities. <br />
-                <br /> In essence, the Adeyinka Adesope Foundation stands as a
-                testament to the transformative potential of empathy,
-                cooperation, and steadfast determination, working tirelessly to
-                forge a brighter, more equitable future for all.
-              </p>
-            </div>
-          </div>
-        </section>
+        <MottoComp />
 
-        <section className="w-full px-6 lg:px-20 h-[909px] bg-custom-primary-bg flex justify-center items-center">
-          <div className="w-full flex flex-col lg:flex-row gap-8 justify-center items-center">
-            <div className="w-full lg:w-3/5">
-              {/* <ImageComp
-                img1={"/about/motto1.png"}
-                img2={"/about/motto2.png"}
-                img3={"/about/motto3.png"}
-              /> */}
-              <div className="w-full h-[360px] lg:h-[640px] relative">
-                <Image
-                  src={"/about/Motto.png"}
-                  alt=""
-                  fill
-                  className="w-auto object-contain absolute"
-                />
-              </div>
-            </div>
-            <div className="w-full lg:w-2/5 flex justify-end">
-              <div className="w-full lg:w-[479px] flex flex-col gap-4">
-                <h1 className="font-bold text-[32px] lg:text-5xl text-custom-secondary-text">
-                  Our Motto
-                </h1>
-                <p className="text-lg leading-[26px] lg:leading-[29px] font-medium text-custom-secondary-text">
-                  Dignity and Service
-                </p>
-                <p className="text-base lg:text-lg text-custom-primary-text leading-[26px] lg:leading-[29px]">
-                  We uphold dignity by treating every individual with respect,
-                  regardless of background, or status by striving for excellence
-                  in all endeavors, and ensuring that every act of service holds
-                  the highest standards of quality and integrity.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <VisionComp />
 
-        <section className="w-full flex justify-center items-center relative">
-          <div className="block lg:hidden w-full">
-            <div className="w-full h-[890px] relative">
-              <Image
-                src="/about/vision-mobile.png"
-                alt="Mobile Background"
-                fill
-                className="object-cover w-full absolute"
-              />
-            </div>
-          </div>
-          <div className="lg:block hidden w-full">
-            <div className="w-full h-[909px] relative">
-              <Image
-                src="/about/visionbg.png"
-                alt="Mobile Background"
-                fill
-                className="object-cover w-full absolute"
-              />
-            </div>
-          </div>
+        <MissionComp />
 
-          <div className="w-full flex flex-col-reverse lg:flex-row justify-center items-center gap-8 px-6 lg:px-20 absolute inset-0">
-            <div className="w-full lg:w-2/5 flex">
-              <div className="w-full lg:w-[479px] flex flex-col gap-4">
-                <h1 className="font-bold text-[32px] lg:text-5xl text-custom-secondary-text">
-                  Our Vision
-                </h1>
-                <p className="text-lg leading-[26px] lg:leading-[29px] font-medium text-custom-secondary-text">
-                  A continent whose people can take advantage of its abundant
-                  potential and possibilities
-                </p>
-                <p className="text-base lg:text-lg text-custom-primary-text leading-[26px] lg:leading-[29px]">
-                  To create an environment where every individual across the
-                  continent has the opportunity to realize their full potential
-                  by tapping into Africa&apos;s vast resources, and cultural
-                  richness to drive innovation, entrepreneurship, and
-                  sustainable development.
-                </p>
-              </div>
-            </div>
-            <div className="w-full lg:w-3/5 flex justify-end">
-              {/* <ReverseImageComp
-                img1={"/about/vision1.png"}
-                img2={"/about/vision2.png"}
-                img3={"/about/vision3.png"}
-              /> */}
-              <div className="w-full h-[360px] lg:h-[640px] relative">
-                <Image
-                  src={"/about/Vision.png"}
-                  alt=""
-                  fill
-                  className="w-auto object-contain absolute"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full flex justify-center items-center relative">
-          <div className="block lg:hidden w-full">
-            <div className="w-full h-[890px] relative">
-              <Image
-                src="/about/mission-mobile.png"
-                alt="Mobile Background"
-                fill
-                className="object-cover w-full absolute"
-              />
-            </div>
-          </div>
-          <div className="lg:block hidden w-full">
-            <div className="w-full h-[909px] relative">
-              <Image
-                src="/about/missionbg.png"
-                alt="Mobile Background"
-                fill
-                className="object-cover w-full absolute"
-              />
-            </div>
-          </div>
-
-          <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-8 px-6 lg:px-20 absolute inset-0">
-            <div className="w-full lg:w-3/5">
-              {/* <ImageComp
-                img1={"/about/mission.png"}
-                img2={"/about/mission2.png"}
-                img3={"/about/mission3.png"}
-              /> */}
-              <div className="w-full h-[360px] lg:h-[640px] relative">
-                <Image
-                  src={"/about/mission.png"}
-                  alt=""
-                  fill
-                  className="w-auto object-contain absolute"
-                />
-              </div>
-            </div>
-            <div className="w-full lg:w-2/5">
-              <div className="w-full lg:w-[479px] flex flex-col gap-4">
-                <h1 className="font-bold text-[32px] lg:text-5xl text-custom-secondary-text">
-                  Our Mission
-                </h1>
-                <p className="text-base lg:text-lg text-custom-primary-text leading-[26px] lg:leading-[29px]">
-                  Improve the quality of life and enterprise through investments
-                  in human capital
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full flex justify-center items-center relative">
-          <div className="block lg:hidden w-full">
-            <div className="w-full h-[2541px] relative">
-              <Image
-                src="/about/core-mobile.png"
-                alt="Mobile Background"
-                fill
-                className="object-cover w-full absolute"
-              />
-            </div>
-          </div>
-          <div className="lg:block hidden w-full">
-            <div className="w-full h-[1505px] relative">
-              <Image
-                src="/about/corebg.png"
-                alt="Mobile Background"
-                fill
-                className="object-cover w-full absolute"
-              />
-            </div>
-          </div>
-
-          <div className="w-full flex flex-col justify-center items-center gap-20 px-6 lg:px-[100px] absolute inset-0">
-            <h1 className="font-bold text-[32px] lg:text-[64px] text-white">
-              Our Core Values
-            </h1>
-            <div className="w-full flex flex-wrap justify-center gap-20 lg:gap-40">
-              {Cores.map((core, index) => (
-                <div
-                  key={index}
-                  className="w-full lg:w-[440px] flex flex-col items-center gap-8"
-                >
-                  <Image
-                    src={core.icon}
-                    alt={core.title}
-                    width={200}
-                    height={200}
-                  />
-                  <div className="flex flex-col items-center gap-4">
-                    <h1 className="font-bold text-2xl text-custom-white">
-                      {core.title}
-                    </h1>
-                    <p className="text-sm text-custom-gray leading-[21px] text-center">
-                      {core.p}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Core />
 
         <section className="w-full flex justify-center items-center relative">
           <div className="block lg:hidden w-full">
@@ -334,7 +118,7 @@ const AboutUsPage = () => {
           <SubscribeComp />
         </section>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -407,29 +191,16 @@ const containerVariants = {
     },
   },
 };
-const leftVariants = {
+const bottomVariants = {
   hidden: {
     opacity: 0,
-    x: -200,
+    y: 200,
   },
   visible: {
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: {
-      duration: 1,
-    },
-  },
-};
-const rightVariants = {
-  hidden: {
-    opacity: 0,
-    x: 200,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 1,
+      duration: 0.5,
     },
   },
 };

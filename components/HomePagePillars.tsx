@@ -40,7 +40,7 @@ const HomePagePillars = () => {
       className="w-full mx-auto bg-custom-primary-bg lg:py-[144px] py-[100px] lg:px-[100px] px-6"
     >
       <div className="w-full lg:flex lg:flex-col-reverse ">
-        <motion.div className="flex flex-col lg:flex-row justify-center items-center gap-10">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
           <motion.div variants={leftVariants} className="w-full lg:w-1/2">
             <div className="w-full lg:h-[640px] h-[360px]">
               <div className="relative w-full h-full">
@@ -53,6 +53,7 @@ const HomePagePillars = () => {
               </div>
             </div>
           </motion.div>
+
           <motion.div
             variants={rightVariants}
             className="lg:w-1/2 lg:h-[569px] w-full flex justify-end"
@@ -109,7 +110,7 @@ const HomePagePillars = () => {
               </div>
             </div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </motion.div>
   );
