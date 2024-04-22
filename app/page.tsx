@@ -43,7 +43,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full justify-center items-center flex absolute inset-0">
+        <div className="w-full justify-center items-center flex absolute inset-0 px-6">
           <SubscribeComp />
         </div>
       </div>

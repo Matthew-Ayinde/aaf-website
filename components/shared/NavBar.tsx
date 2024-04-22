@@ -2,19 +2,23 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setOpen(!open);
-    // if (!open) {
-    //   document.body.style.overflow = "hidden";
-    // } else {
-    //   document.body.style.overflow = "auto";
-    // }
   };
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [open]);
+  
   return (
     <nav className="w-full mx-auto max-w-screen-xxl">
       <div className="flex items-center justify-between max-w-screen-xxl lg:px-20 px-6 py-5 h-[88px] w-full mx-auto bg-white lg:relative">
