@@ -15,7 +15,7 @@ export default function Home() {
       <SwiperComp />
       <Advancing />
       <HomePagePillars />
-      <HomePageProgramme />
+      {/* <HomePageProgramme /> */}
       <HomePagePartner />
       <Programmes />
       <Awaiting />
