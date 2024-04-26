@@ -110,7 +110,7 @@ const GetInvolved = () => {
           </motion.div>
         </section>
 
-        <Content />
+        {/* <Content /> */}
 
         <section className="w-full flex justify-center items-center relative">
           <div className="block lg:hidden w-full">
@@ -134,11 +134,10 @@ const GetInvolved = () => {
             </div>
           </div>
 
-          <div className="w-full flex flex-col justify-center items-center absolute inset-0 gap-10 lg:gap-20 px-6">
+          {/* <div className="w-full flex flex-col justify-center items-center absolute inset-0 gap-10 lg:gap-20 px-6">
             <h1 className="font-bold text-2xl lg:text-[56px] text-white">
               Get in touch
             </h1>
-            {/* form */}
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
@@ -276,7 +275,7 @@ const GetInvolved = () => {
                 </Button>
               </form>
             </Form>
-          </div>
+          </div> */}
         </section>
 
         <section>
