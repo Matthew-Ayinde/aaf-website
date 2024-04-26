@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import Content from "./partner/Content";
 
@@ -90,10 +91,13 @@ const GetInvolved = () => {
   }, []);
 
   return (
-    <motion.div variants={containerVariants}
-    ref={ref}
-    initial="hidden"
-    animate={mainControls} className="w-full mx-auto max-w-screen-xxl">
+    <motion.div
+      variants={containerVariants}
+      ref={ref}
+      initial="hidden"
+      animate={mainControls}
+      className="w-full mx-auto max-w-screen-xxl"
+    >
       <div className="flex flex-col justify-center items-center w-full overflow-x-hidden">
         <section className="relative h-screen w-full">
           <div
@@ -102,7 +106,10 @@ const GetInvolved = () => {
               backgroundImage: 'url("/volunteer/getInvolvedBanner.png")',
             }}
           />
-          <motion.div variants={bottomVariants} className="absolute inset-0 flex justify-center items-center">
+          <motion.div
+            variants={bottomVariants}
+            className="absolute inset-0 flex justify-center items-center"
+          >
             {/* Centered content */}
             <h1 className="text-white text-[40px] lg:text-[64px] font-bold">
               Partner with us
@@ -110,13 +117,13 @@ const GetInvolved = () => {
           </motion.div>
         </section>
 
-        <Content />
+        {/* <Content /> */}
 
         <section className="w-full flex justify-center items-center relative">
           <div className="block lg:hidden w-full">
-            <div className="w-full h-[889px] relative">
+            <div className="w-full h-[2874px] relative">
               <Image
-                src="/volunteer/become-volunteer-mobile.png"
+                src="/donate-mobile.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -124,9 +131,9 @@ const GetInvolved = () => {
             </div>
           </div>
           <div className="lg:block hidden w-full">
-            <div className="w-full h-[993px] relative">
+            <div className="w-full h-[3880px] relative">
               <Image
-                src="/volunteer/become-volunteer-bg.png"
+                src="/donate-bg.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"
@@ -134,11 +141,47 @@ const GetInvolved = () => {
             </div>
           </div>
 
-          <div className="w-full flex flex-col justify-center items-center absolute inset-0 gap-10 lg:gap-20 px-6">
+          <div className="absolute inset-0">
+            <div className="w-[120px] lg:w-[200px] h-[218.54px] lg:h-[364.24px]">
+              <div className="w-full h-full relative">
+
+              <Image src="/Group.png" alt="" fill className="w-auto object-contain absolute" />
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col absolute inset-0 gap-10 lg:gap-20 px-6 lg:px-[100px] justify-center items-center">
+            <div className="w-full flex flex-col gap-[48px] lg:gap-20 ">
+              {donate.map((donate, index) => (
+
+              <div key={index} className="w-full rounded-2xl h-[480px] lg:h-[640px] relative flex flex-col justify-center items-center bg-black">
+                <div className="w-full h-full relative">
+                  <Image
+                    src={donate.bgImg}
+                    alt=""
+                    fill
+                    className="object-cover absolute w-full rounded-2xl"
+                  />
+                </div>
+                <div className="w-full lg:w-[720px] h-[160px] lg:h-[200px] bg-white/10 backdrop-blur-xl rounded-t-xl rounded-b-2xl lg:rounded-b-none absolute bottom-0 text-white flex justify-center items-center">
+
+                  <div className="w-[308px] lg:w-[652px] flex flex-col justify-center items-center gap-4 lg:gap-6">
+
+                  <h3 className="font-bold text-[20px] lg:text-2xl">{donate.title}</h3>
+                  <p className="font-medium text-[13px] lg:text-base text-center">{donate.text}</p>
+                  <Link href={donate.link} className="font-medium text-[13px] lg:text-base text-custom-main-color hover:underline hover:underline-offset-8">Request a Proposal</Link>
+                  </div>
+
+                </div>
+              </div>
+              ))}
+            </div>
+          </div>
+
+          {/* <div className="w-full flex flex-col justify-center items-center absolute inset-0 gap-10 lg:gap-20 px-6">
             <h1 className="font-bold text-2xl lg:text-[56px] text-white">
               Get in touch
             </h1>
-            {/* form */}
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
@@ -276,7 +319,7 @@ const GetInvolved = () => {
                 </Button>
               </form>
             </Form>
-          </div>
+          </div> */}
         </section>
 
         <section>
@@ -316,6 +359,39 @@ const newImages: ImageData[] = [
     alt: "",
   },
 ];
+
+const donate = [
+  {
+    bgImg: "/color-hands.png",
+    title: "Donate",
+    text: "Your collaboration with AAF can make a meaningful impact.",
+    link: "/",
+  },
+  {
+    bgImg: "/parenting.png",
+    title: "Kit-a-Mum",
+    text: "It costs NGN40,000 to provide a new mum with a post natal care kit, containing essential supplies for the immediate care of herself and her new born.",
+    link: "/",
+  },
+  {
+    bgImg: "/father.png",
+    title: "Kit-a-Student",
+    text: "It costs NGN40,000 to provide a pupil with back-to-school items for a new session, enabling them to be fully equipped to maximize their potential and realize their dreams.",
+    link: "/",
+  },
+  {
+    bgImg: "/graduate.png",
+    title: "Groom an Exceptional Talent",
+    text: "Reward academic excellence and fuel dreams.",
+    link: "/",
+  },
+  {
+    bgImg: "/stressed.png",
+    title: "Fund an Entrepreneur",
+    text: "Give a grant of NGN100,000 to a small business owner in rural and peri-urban communities.",
+    link: "/",
+  },
+]
 
 export default GetInvolved;
 
