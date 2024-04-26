@@ -40,7 +40,7 @@ const WhoWeAre = () => {
       <div className="lg:block hidden w-full">
         <div className="w-full h-[800px] relative">
           <Image
-            src="/about/whoweare.png"
+            src="/about/who-we-are.png"
             alt="Mobile Background"
             fill
             className="object-cover w-full absolute"

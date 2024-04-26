@@ -38,7 +38,7 @@ const MissionComp = () => {
           <div className="lg:block hidden w-full">
             <div className="w-full h-[909px] relative">
               <Image
-                src="/about/missionbg.png"
+                src="/about/mission-bg.png"
                 alt="Mobile Background"
                 fill
                 className="object-cover w-full absolute"

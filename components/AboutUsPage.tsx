@@ -11,7 +11,7 @@ import SubscribeComp from "./shared/SubscribeComp";
 import ReverseImageComp from "./shared/ReverseImageComp";
 import MottoComp from "./about/MottoComp";
 import VisionComp from "./about/VisionComp";
-import MissionComp from "./about/MottoComp";
+import MissionComp from "./about/MissionComp";
 import WhoWeAre from "./about/WhoWeAre";
 import Core from "./about/Core";
 

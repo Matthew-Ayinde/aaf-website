@@ -25,7 +25,7 @@ const MottoComp = () => {
       variants={containerVariants}
       initial="hidden"
       animate={mainControls}
-      className="w-full mx-auto bg-custom-primary-bg lg:py-[144px] py-[100px] lg:px-[100px] px-6"
+      className="w-full mx-auto bg-custom-motto-gray lg:py-[144px] py-[100px] lg:px-[100px] px-6"
     >
       <div className="w-full lg:flex lg:flex-col-reverse">
         <div className="flex flex-col lg:flex-row justify-center items-center gap-10">

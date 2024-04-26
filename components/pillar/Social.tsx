@@ -40,7 +40,7 @@ const Social = () => {
       <div className="lg:block hidden w-full">
         <div className="w-full h-[909px] relative">
           <Image
-            src="/pillar/social-enterprise-bg.png"
+            src="/pillar/health-bg.png"
             alt="Mobile Background"
             fill
             className="object-cover w-full absolute"
