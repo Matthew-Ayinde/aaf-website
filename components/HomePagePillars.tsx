@@ -37,7 +37,7 @@ const HomePagePillars = () => {
       variants={containerVariants}
       initial="hidden"
       animate={mainControls}
-      className="w-full mx-auto bg-custom-primary-bg lg:py-[144px] py-[100px] lg:px-[100px] px-6"
+      className="w-full mx-auto bg-[#F0F5F6] lg:py-[144px] py-[100px] lg:px-[100px] px-6"
     >
       <div className="w-full lg:flex lg:flex-col-reverse ">
         <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
@@ -58,9 +58,8 @@ const HomePagePillars = () => {
             variants={rightVariants}
             className="lg:w-1/2 lg:h-[569px] w-full flex justify-end"
           >
-            <div className="w-full lg:w-[520px] flex flex-col gap-12">
+            <div className="w-full lg:w-[520px] flex flex-col gap-12 justify-center">
               <div className="w-full flex flex-col gap-6">
-                <h6 className="font-medium text-lg text-white">Our Pillars</h6>
                 <h1 className="font-bold lg:text-5xl text-2xl text-black">
                   AAF Pilllars
                 </h1>
@@ -73,7 +72,7 @@ const HomePagePillars = () => {
                 <ul className="flex flex-col gap-2 text-custom-primary-text ">
                   <li className="flex gap-4 items-center">
                     <Image
-                      src={"/checkBox.svg"}
+                      src={"/checkedBox.svg"}
                       width={40}
                       height={40}
                       alt=""
@@ -82,7 +81,7 @@ const HomePagePillars = () => {
                   </li>
                   <li className="flex gap-4 items-center">
                     <Image
-                      src={"/checkBox.svg"}
+                      src={"/checkedBox.svg"}
                       width={40}
                       height={40}
                       alt=""
@@ -91,7 +90,7 @@ const HomePagePillars = () => {
                   </li>
                   <li className="flex gap-4 items-center">
                     <Image
-                      src={"/checkBox.svg"}
+                      src={"/checkedBox.svg"}
                       width={40}
                       height={40}
                       alt=""
@@ -99,14 +98,6 @@ const HomePagePillars = () => {
                     Social Enterprise
                   </li>
                 </ul>
-              </div>
-              <div className="lg:w-[520px] lg:h-[164px] relative w-full h-[104px]">
-                <Image
-                  src={"/home/AAF-Pillar-Stat.png"}
-                  alt=""
-                  fill
-                  className="absolute object-contain rounded-xl"
-                />
               </div>
             </div>
           </motion.div>

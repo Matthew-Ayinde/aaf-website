@@ -25,7 +25,7 @@ const Programmes = () => {
   return (
     <div
       ref={ref}
-      className="w-full mx-auto items-center justify-center relative"
+      className="w-full mx-auto items-center justify-center relative pt-[180px]"
     >
       <div className="block lg:hidden w-full">
         <div className="w-full h-[3275px] relative">
@@ -48,48 +48,53 @@ const Programmes = () => {
         </div>
       </div>
 
-      <motion.div variants={containerVariants}
-          initial="hidden"
-          animate={mainControls} className="w-full flex flex-col justify-center items-center absolute inset-0 lg:px-24 px-6">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate={mainControls}
+        className="w-full flex flex-col justify-center items-center absolute inset-0 lg:px-24 px-6"
+      >
         <motion.div
           variants={topVariants}
           className="flex flex-col items-center justify-center gap-4 w-full lg:w-[808px]"
         >
           {/* <h6 className="text-custom-main-color">Our Programmes</h6> */}
-          <h1 className="font-bold lg:text-5xl text-4xl text-custom-secondary-text lg:mx-16 mx-0 text-center">
-            Our Programs
+          <h1 className="lg:font-semibold font-bold lg:text-[40px] text-2xl text-custom-secondary-text lg:mx-16 mx-0 text-center lg:leading-[56px] leading-[33.6px]">
+            The signature initiatives of the AAF aligns with its foundation
+            pillars of Health, Education and Social Enterprise.
           </h1>
-          <p className="lg:font-normal lg:text-lg font-light text-sm text-center">
-            The signature initiatives of the AAF aligns with its foundation pillars of Health, Education and Social Enterprise.
-          </p>
         </motion.div>
-        <div
-          
-          className="grid lg:grid-cols-3 grid-col-1 gap-x-6 lg:gap-y-[70px] gap-y-6 mt-[68px]"
-        >
+        <div className="grid lg:grid-cols-2 grid-col-1 gap-x-20 lg:gap-y-[70px] gap-y-10 mt-[68px]">
           {cardDetails.map((card, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
-              className={`h-[410px] lg:h-[500px] max-w-[400px] p-4 flex items-end rounded-xl`}
-              style={{
-                backgroundImage: `url(${card.imageSrc})`,
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              }}
+              className="h-[600px] lg:h-[660px] lg:w-[560px] w-[328px] flex rounded-xl border "
             >
-              <div className="flex flex-col gap-4 lg:gap-5 w-full lg:max-w-[343px]">
-                <h1 className="text-lg lg:text-2xl font-bold text-custom-white">
-                  {card.title}
-                </h1>
-                <p className="text-custom-gray text-xs">{card.paragraph}</p>
-                <Button
-                  asChild
-                  className="bg-custom-main-color hover:bg-custom-main-color px-3 w-full h-[45.92px] lg:h-[52px]"
-                >
-                  <Link href={""}>Donate Now</Link>
-                </Button>
+              <div className="flex flex-col gap-4 lg:gap-5 w-full  ">
+                <div className="relative w-full h-[360px] ">
+                  <Image
+                    src={card.imageSrc}
+                    alt=""
+                    fill
+                    className="absolute object-cover rounded-t-xl"
+                  />
+                </div>
+                <div className="lg:w-[520px] w-[304px] h-[255px] lg:mx-5 mx-3 my-6 flex flex-col gap-5 lg:px-[10px] px-0 ">
+                  <h1 className="text-xl lg:text-2xl font-bold text-custom-secondary-text lg:w-[421px] w-[304px] lg:leading-[33.6px] leading-[28px]">
+                    {card.title}
+                  </h1>
+                  <p className="text-custom-primary-text lg:text-base text-sm leading-[22.4px] font-normal lg:leading-[25.6px]">
+                    {card.paragraph}
+                  </p>
+
+                  <Link
+                    className="text-custom-main-color w-full underline underline-offset-8 lg:text-base text-sm"
+                    href={""}
+                  >
+                    Partner with us - Request a proposal
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -101,40 +106,28 @@ const Programmes = () => {
 
 const cardDetails = [
   {
-    imageSrc: "/home/helped2.png",
-    title: "Housing & Shelter",
+    imageSrc: "/newImg1.png",
+    title: "Maternal and Neonatal Health Support Programme (MNHSP)",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "By providing easy access to healthcare, we aim to implement initiatives that significantly decrease maternal mortality rates, improve access to prenatal healthcare, and enhance Neonatal Care through our support programmes.",
   },
   {
-    imageSrc: "/home/helped3.png",
-    title: "Care & Support",
+    imageSrc: "/newImg2.png",
+    title: "Sustainable WASH Improvement (SWASHIM)",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "We aim to provide and ensure access to clean water, sanitation, and hygiene facilities, by promoting and educating communities on hygiene practices through WASH interventions, which would foster behavioral change and sustainable hygiene habits.",
   },
   {
-    imageSrc: "/home/helped4.png",
-    title: "Education",
+    imageSrc: "/newImg3.png",
+    title: "Graduate Training and Enhancement Programme (GTEP)",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "We want to equip graduates with essential skills and cultivate leadership qualities and entrepreneurial mindset among them, by empowering them to drive innovation and make a positive impact in their respective fields through tailored training and workshops to enhance employability.",
   },
   {
-    imageSrc: "/home/helped5.png",
-    title: "Enviromental Help",
+    imageSrc: "/newImg4.png",
+    title: "The AAF Grant",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    imageSrc: "/home/helped6.png",
-    title: "Food Relief Funding",
-    paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    imageSrc: "/home/helped7.png",
-    title: "Health & Dental Care",
-    paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "We provide cash grants to entrepreneurs with the aim of enabling them to advance their business",
   },
 ];
 
@@ -177,12 +170,12 @@ const cardVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { 
+    transition: {
       duration: 0.5,
-      ease: "easeInOut", 
-      type: "spring", 
-      damping: 17, 
-      mass: 2 
+      ease: "easeInOut",
+      type: "spring",
+      damping: 17,
+      mass: 2,
     },
   },
 };
